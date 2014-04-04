@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A76921818EEEA8100646231 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A76921718EEEA8100646231 /* main.cpp */; };
 		5A76921A18EEEA8100646231 /* Problem1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A76921918EEEA8100646231 /* Problem1.1 */; };
+		5A76922218EEEB8F00646231 /* ProjectEuler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A76922018EEEB8F00646231 /* ProjectEuler.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		5A76921418EEEA8100646231 /* Problem1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Problem1; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A76921718EEEA8100646231 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5A76921918EEEA8100646231 /* Problem1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Problem1.1; sourceTree = "<group>"; };
+		5A76922018EEEB8F00646231 /* ProjectEuler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProjectEuler.cpp; path = ../ProjectEuler.cpp; sourceTree = "<group>"; };
+		5A76922118EEEB8F00646231 /* ProjectEuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectEuler.h; path = ../ProjectEuler.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 		5A76921618EEEA8100646231 /* Problem1 */ = {
 			isa = PBXGroup;
 			children = (
+				5A76922018EEEB8F00646231 /* ProjectEuler.cpp */,
+				5A76922118EEEB8F00646231 /* ProjectEuler.h */,
 				5A76921718EEEA8100646231 /* main.cpp */,
 				5A76921918EEEA8100646231 /* Problem1.1 */,
 			);
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A76921818EEEA8100646231 /* main.cpp in Sources */,
+				5A76922218EEEB8F00646231 /* ProjectEuler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
