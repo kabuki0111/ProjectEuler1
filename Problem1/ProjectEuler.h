@@ -11,4 +11,9 @@
 
 #include <iostream>
 
+class ProjectEuler{
+public:
+    int p1(int);
+};
+
 #endif /* defined(__Problem1__ProjectEuler__) */
