@@ -10,7 +10,20 @@
 		5A76921818EEEA8100646231 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A76921718EEEA8100646231 /* main.cpp */; };
 		5A76921A18EEEA8100646231 /* Problem1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A76921918EEEA8100646231 /* Problem1.1 */; };
 		5A76922218EEEB8F00646231 /* ProjectEuler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A76922018EEEB8F00646231 /* ProjectEuler.cpp */; };
+		5AA6F46118F16A8B00721D9E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA6F46018F16A8B00721D9E /* XCTest.framework */; };
+		5AA6F46718F16A8B00721D9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AA6F46518F16A8B00721D9E /* InfoPlist.strings */; };
+		5AA6F46918F16A8B00721D9E /* Problem_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6F46818F16A8B00721D9E /* Problem_Tests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AA6F46B18F16A8B00721D9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A76920C18EEEA8100646231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A76921318EEEA8100646231;
+			remoteInfo = Problem1;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5A76921218EEEA8100646231 /* CopyFiles */ = {
@@ -31,6 +44,12 @@
 		5A76921918EEEA8100646231 /* Problem1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Problem1.1; sourceTree = "<group>"; };
 		5A76922018EEEB8F00646231 /* ProjectEuler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProjectEuler.cpp; path = ../ProjectEuler.cpp; sourceTree = "<group>"; };
 		5A76922118EEEB8F00646231 /* ProjectEuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectEuler.h; path = ../ProjectEuler.h; sourceTree = "<group>"; };
+		5AA6F45E18F16A8B00721D9E /* Problem Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Problem Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA6F46018F16A8B00721D9E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5AA6F46418F16A8B00721D9E /* Problem Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Problem Tests-Info.plist"; sourceTree = "<group>"; };
+		5AA6F46618F16A8B00721D9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AA6F46818F16A8B00721D9E /* Problem_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Problem_Tests.m; sourceTree = "<group>"; };
+		5AA6F46A18F16A8B00721D9E /* Problem Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Problem Tests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +60,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5AA6F45B18F16A8B00721D9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA6F46118F16A8B00721D9E /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -48,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				5A76921618EEEA8100646231 /* Problem1 */,
+				5AA6F46218F16A8B00721D9E /* Problem Tests */,
+				5AA6F45F18F16A8B00721D9E /* Frameworks */,
 				5A76921518EEEA8100646231 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				5A76921418EEEA8100646231 /* Problem1 */,
+				5AA6F45E18F16A8B00721D9E /* Problem Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +99,33 @@
 				5A76921918EEEA8100646231 /* Problem1.1 */,
 			);
 			path = Problem1;
+			sourceTree = "<group>";
+		};
+		5AA6F45F18F16A8B00721D9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6F46018F16A8B00721D9E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AA6F46218F16A8B00721D9E /* Problem Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6F46818F16A8B00721D9E /* Problem_Tests.m */,
+				5AA6F46318F16A8B00721D9E /* Supporting Files */,
+			);
+			path = "Problem Tests";
+			sourceTree = "<group>";
+		};
+		5AA6F46318F16A8B00721D9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6F46418F16A8B00721D9E /* Problem Tests-Info.plist */,
+				5AA6F46518F16A8B00721D9E /* InfoPlist.strings */,
+				5AA6F46A18F16A8B00721D9E /* Problem Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +148,24 @@
 			productReference = 5A76921418EEEA8100646231 /* Problem1 */;
 			productType = "com.apple.product-type.tool";
 		};
+		5AA6F45D18F16A8B00721D9E /* Problem Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AA6F46D18F16A8B00721D9E /* Build configuration list for PBXNativeTarget "Problem Tests" */;
+			buildPhases = (
+				5AA6F45A18F16A8B00721D9E /* Sources */,
+				5AA6F45B18F16A8B00721D9E /* Frameworks */,
+				5AA6F45C18F16A8B00721D9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AA6F46C18F16A8B00721D9E /* PBXTargetDependency */,
+			);
+			name = "Problem Tests";
+			productName = "Problem Tests";
+			productReference = 5AA6F45E18F16A8B00721D9E /* Problem Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +174,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = T.S;
+				TargetAttributes = {
+					5AA6F45D18F16A8B00721D9E = {
+						TestTargetID = 5A76921318EEEA8100646231;
+					};
+				};
 			};
 			buildConfigurationList = 5A76920F18EEEA8100646231 /* Build configuration list for PBXProject "Problem1" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -113,9 +193,21 @@
 			projectRoot = "";
 			targets = (
 				5A76921318EEEA8100646231 /* Problem1 */,
+				5AA6F45D18F16A8B00721D9E /* Problem Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AA6F45C18F16A8B00721D9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA6F46718F16A8B00721D9E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A76921018EEEA8100646231 /* Sources */ = {
@@ -127,7 +219,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5AA6F45A18F16A8B00721D9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA6F46918F16A8B00721D9E /* Problem_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AA6F46C18F16A8B00721D9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A76921318EEEA8100646231 /* Problem1 */;
+			targetProxy = 5AA6F46B18F16A8B00721D9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AA6F46518F16A8B00721D9E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AA6F46618F16A8B00721D9E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5A76921B18EEEA8100646231 /* Debug */ = {
@@ -214,6 +333,40 @@
 			};
 			name = Release;
 		};
+		5AA6F46E18F16A8B00721D9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Problem Tests/Problem Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Problem Tests/Problem Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5AA6F46F18F16A8B00721D9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Problem Tests/Problem Tests-Prefix.pch";
+				INFOPLIST_FILE = "Problem Tests/Problem Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -231,6 +384,15 @@
 			buildConfigurations = (
 				5A76921E18EEEA8100646231 /* Debug */,
 				5A76921F18EEEA8100646231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AA6F46D18F16A8B00721D9E /* Build configuration list for PBXNativeTarget "Problem Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA6F46E18F16A8B00721D9E /* Debug */,
+				5AA6F46F18F16A8B00721D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

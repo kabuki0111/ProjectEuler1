@@ -15,7 +15,7 @@ int main(int argc, const char * argv[])
     std::cout << "Hello, World!\n";
     ProjectEuler euler;
     int getNatralNum = 0;
-    getNatralNum = euler.p1(10);
+    getNatralNum = euler.p1(1000);
     printf("%d\n", getNatralNum);
     return 0;
 }
