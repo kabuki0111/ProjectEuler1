@@ -11,7 +11,7 @@
 int main(int argc, const char * argv[])
 {
     ProjectEuler euler;
-    printf( "%d\n", euler.p2(4) );
+    printf( "%d\n", euler.p2(400000) );
     return 0;
 }
 
