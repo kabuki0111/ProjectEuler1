@@ -6,13 +6,12 @@
 //  Copyright (c) 2014年 T.S. All rights reserved.
 //
 
-#include <iostream>
+#include "ProjectEuler.h"
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    ProjectEuler euler;
+    printf( "%d\n", euler.p2(400000) );
     return 0;
 }
 

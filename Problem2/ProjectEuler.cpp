@@ -18,6 +18,19 @@ int ProjectEuler::p1(int maxNaturalNumber){
     return sumNaturalNumber;
 }
 
+
+//フィボナッチ数列
 int ProjectEuler::p2(int maxFibonaciCount ){
-    retun 0;
+    int sumFibonaci = 2;
+    //int sumEvenFibonaci = 0;
+    for (int i = 0; i < maxFibonaciCount; i++) {
+        if(i <= 1 ){
+            sumFibonaci = 1;
+        }else{
+            sumFibonaci = (i - 1) + i;
+        }
+        
+        printf("count --> %d   %d\n", sumFibonaci, i );
+    }
+    return 0;
 }
