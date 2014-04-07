@@ -1,20 +1,20 @@
 //
-//  Problem_Tests.m
-//  Problem Tests
+//  ProblemTests.m
+//  ProblemTests
 //
-//  Created by Suzuki Takayuki on 2014/04/06.
+//  Created by Suzuki Takayuki on 2014/04/07.
 //  Copyright (c) 2014年 T.S. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-//#import <ProjectEuler.h>
+//#import "ProjectEuler.h"
 //#include "ProjectEuler.h"
 
-@interface Problem_Tests : XCTestCase
+@interface ProblemTests : XCTestCase
 
 @end
 
-@implementation Problem_Tests
+@implementation ProblemTests
 
 - (void)setUp
 {

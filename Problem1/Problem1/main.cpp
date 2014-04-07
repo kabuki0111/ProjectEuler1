@@ -10,13 +10,13 @@
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
     ProjectEuler euler;
-    int getNatralNum = 0;
-    getNatralNum = euler.p1(1000);
-    printf("%d\n", getNatralNum);
+    int getNaturalNum = euler.p1( 1000 );
+    if(getNaturalNum == 23){
+        printf( "%d => okay!!\n", getNaturalNum);
+    }else{
+        printf( "%d => no!!\n", getNaturalNum);
+    }
     return 0;
 }
 

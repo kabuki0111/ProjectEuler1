@@ -8,7 +8,7 @@
 
 #ifndef __Problem1__ProjectEuler__
 #define __Problem1__ProjectEuler__
-
+//#ifdef __cplus
 #include <iostream>
 
 class ProjectEuler{

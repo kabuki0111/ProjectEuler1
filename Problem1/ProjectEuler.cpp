@@ -19,3 +19,4 @@ int ProjectEuler::p1(int maxNaturalNumber){
     }
     return sumNaturalNumber;
 }
+
