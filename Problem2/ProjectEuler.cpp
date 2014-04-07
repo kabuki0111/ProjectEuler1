@@ -50,8 +50,8 @@ std::vector<int> ProjectEuler::p2(int maxLoop){
 }
 
 
-unsigned long long ProjectEuler::fibonaci(unsigned long long targetFibonaciCount){
-    long ansFibonaci = 0;
+int ProjectEuler::fibonaci(int targetFibonaciCount){
+    int ansFibonaci = 0;
     switch (targetFibonaciCount) {
         case 0:
         case 1:
@@ -65,6 +65,11 @@ unsigned long long ProjectEuler::fibonaci(unsigned long long targetFibonaciCount
 }
 
 //テストコード
-bool ProjectEuler::isTestFibonaci(int vector, int fibonaciNumber){
-    return (vector == fibonaciNumber);
+bool ProjectEuler::isTestFibonaci(std::vector<int> targeteVector, int fibonaciNumber){
+    for (int i= 0; i<targeteVector.size(); i++) {
+        if(targeteVector[i]==fibonaciNumber){
+            return true;
+        }
+    }
+    return false;
 }

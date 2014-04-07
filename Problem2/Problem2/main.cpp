@@ -6,7 +6,6 @@
 //  Copyright (c) 2014年 T.S. All rights reserved.
 //
 
-#include <limits.h>
 #include "ProjectEuler.h"
 
 
@@ -16,17 +15,19 @@ int main(int argc, const char * argv[])
     int maxCount = 100;
     std::vector<int> getFobonaci = euler.p2(maxCount);
     
-    bool isTestFibonaci = euler.isTestFibonaci( getFobonaci[9], 55);
+    bool isTestFibonaci = euler.isTestFibonaci( getFobonaci, 55);
     
     if(isTestFibonaci){
-        int sumEvent = 0;
-        for(int i = 0; i < maxCount; i++ ){
+        int sumEventFobonaci = 0;
+        for(int i = 0; i < getFobonaci.size(); i++ ){
             if(getFobonaci[i] % 2 == 0){
-                sumEvent += getFobonaci[i];
+                printf("%d\n",getFobonaci[i]);
+                sumEventFobonaci += getFobonaci[i];
             }
-            //printf("%d %d\n", i, boo);
         }
-        printf("sum %d\n", sumEvent);
+        printf("sum %d\n", sumEventFobonaci);
+    }else{
+        printf("error program!!\n");
     }
     
     

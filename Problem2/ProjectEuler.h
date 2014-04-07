@@ -15,13 +15,16 @@
 
 class ProjectEuler{
 public:
-    bool isTestFibonaci(int, int);
+    //テストコード用
+    bool isTestFibonaci(std::vector<int>, int);
     
+    //ProjectEular用
     int p1(int);
     std::vector<int> p2(int);
     
+    //ProjectEularのメソッドをサポートするメソッド用
 private:
-    unsigned long long fibonaci(unsigned long long);
+    int fibonaci(int);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
