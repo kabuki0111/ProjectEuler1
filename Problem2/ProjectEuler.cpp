@@ -20,17 +20,35 @@ int ProjectEuler::p1(int maxNaturalNumber){
 
 
 //フィボナッチ数列
-int ProjectEuler::p2(int maxFibonaciCount ){
-    int sumEvenFibonaci = 0;
-    for (int i = 0; i < maxFibonaciCount; i++) {
-        if (fibonaci(i) % 2 == 0 ) {
-            printf( "even = %d %d\n", i, fibonaci(i) );
-            sumEvenFibonaci += fibonaci(i);
+std::vector<int> ProjectEuler::p2(int maxLoop){
+    std::vector<int> testList;
+    //long sumEvenFibonaci = 1;
+    int sumFibonaci = 1;
+    int afterOne = 1, afterTwo = 1;
+    int maxLimitFibonaci = 4000000;
+    
+    for (int i = 0; i < maxLoop; i++) {
+        if(i <= 1){
+            testList.push_back(1);
+        }else{
+            sumFibonaci = afterOne + afterTwo;
+            afterTwo = afterOne;
+            afterOne = sumFibonaci;
+            //testList.push_back(sumFibonaci);
+            
+            if(sumFibonaci < maxLimitFibonaci){
+                testList.push_back(sumFibonaci);
+            }else{
+                return testList;
+            }
+            
         }
+        
     }
     
-    return sumEvenFibonaci;
+    return testList;
 }
+
 
 int ProjectEuler::fibonaci(int targetFibonaciCount){
     int ansFibonaci = 0;
@@ -44,4 +62,14 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
             break;
     }
     return ansFibonaci;
+}
+
+//テストコード
+bool ProjectEuler::isTestFibonaci(std::vector<int> targeteVector, int fibonaciNumber){
+    for (int i= 0; i<targeteVector.size(); i++) {
+        if(targeteVector[i]==fibonaciNumber){
+            return true;
+        }
+    }
+    return false;
 }

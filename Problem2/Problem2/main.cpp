@@ -8,10 +8,30 @@
 
 #include "ProjectEuler.h"
 
+
 int main(int argc, const char * argv[])
 {
     ProjectEuler euler;
-    printf( "%d\n", euler.p2(400000) );
+    int maxCount = 100;
+    std::vector<int> getFobonaci = euler.p2(maxCount);
+    
+    bool isTestFibonaci = euler.isTestFibonaci( getFobonaci, 55);
+    
+    if(isTestFibonaci){
+        int sumEventFobonaci = 0;
+        for(int i = 0; i < getFobonaci.size(); i++ ){
+            if(getFobonaci[i] % 2 == 0){
+                printf("%d\n",getFobonaci[i]);
+                sumEventFobonaci += getFobonaci[i];
+            }
+        }
+        printf("sum %d\n", sumEventFobonaci);
+    }else{
+        printf("error program!!\n");
+    }
+    
+    
     return 0;
 }
+
 

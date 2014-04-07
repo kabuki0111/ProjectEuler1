@@ -10,11 +10,19 @@
 #define __Problem1__ProjectEuler__
 //#ifdef __cplus
 #include <iostream>
+#include <list>
+#include <vector>
 
 class ProjectEuler{
 public:
+    //テストコード用
+    bool isTestFibonaci(std::vector<int>, int);
+    
+    //ProjectEular用
     int p1(int);
-    int p2(int);
+    std::vector<int> p2(int);
+    
+    //ProjectEularのメソッドをサポートするメソッド用
 private:
     int fibonaci(int);
 };
