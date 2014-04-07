@@ -20,20 +20,49 @@ int ProjectEuler::p1(int maxNaturalNumber){
 
 
 //フィボナッチ数列
-int ProjectEuler::p2(int maxFibonaciCount ){
-    int sumEvenFibonaci = 0;
-    for (int i = 0; i < maxFibonaciCount; i++) {
-        if (fibonaci(i) % 2 == 0 ) {
-            printf( "even = %d %d\n", i, fibonaci(i) );
-            sumEvenFibonaci += fibonaci(i);
+std::vector<long> ProjectEuler::p2(){
+    std::vector<long> testList;
+    //long sumEvenFibonaci = 1;
+    long sumFibonaci = 1;
+    long afterOne = 1, afterTwo = 1;
+    
+    for ( long i = 0; i < 10; i++) {
+        if(i > 1){
+            sumFibonaci = afterOne + afterTwo;
+            printf("test %lo　one %lo two %lo\n", sumFibonaci, afterOne, afterTwo);
+            afterTwo = afterOne;
+            afterOne = sumFibonaci;
+            testList.push_back(sumFibonaci);
+            
+            //testList.push_back(sumFibonaci);
+            
+            //printf("boo %lo one　%lo two %lo\n", sumFibonaci, afterOne, afterTwo);
+            /*
+            if( sumFibonaci % 2 == 0 ){
+                if( sumFibonaci < 4000000 ){
+                    sumEvenFibonaci += sumFibonaci;
+                    printf("even >>>> count  %lo sum %lo one %lo two %lo    ----> %lo\n", i, sumFibonaci, afterOne, afterTwo, sumEvenFibonaci );
+                }else{
+                    return 0;
+                }
+            }
+            */
+            //if(i){
+            //afterTwo = afterOne;
+            //afterOne = sumFibonaci;
+            //}
+            
+            
         }
+        
     }
     
-    return sumEvenFibonaci;
+    return testList;
 }
 
-int ProjectEuler::fibonaci(int targetFibonaciCount){
-    int ansFibonaci = 0;
+
+unsigned long long ProjectEuler::fibonaci(unsigned long long targetFibonaciCount){
+    long ansFibonaci = 0;
     switch (targetFibonaciCount) {
         case 0:
         case 1:

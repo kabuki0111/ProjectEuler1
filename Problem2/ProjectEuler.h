@@ -10,13 +10,15 @@
 #define __Problem1__ProjectEuler__
 //#ifdef __cplus
 #include <iostream>
+#include <list>
+#include <vector>
 
 class ProjectEuler{
 public:
     int p1(int);
-    int p2(int);
+    std::vector<long> p2();
 private:
-    int fibonaci(int);
+    unsigned long long fibonaci(unsigned long long);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
