@@ -11,9 +11,7 @@
 int ProjectEuler::p1(int maxNaturalNumber){
     int sumNaturalNumber = 0;
     for (int i = 1; i < maxNaturalNumber; i++) {
-        if( i % 3 == 0){
-            sumNaturalNumber += i;
-        }else if( i  % 5 == 0) {
+        if( i % 3 == 0 || i  % 5 == 0){
             sumNaturalNumber += i;
         }
     }
