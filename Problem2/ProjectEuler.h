@@ -15,6 +15,8 @@ class ProjectEuler{
 public:
     int p1(int);
     int p2(int);
+private:
+    int fibonaci(int);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */

@@ -21,16 +21,29 @@ int ProjectEuler::p1(int maxNaturalNumber){
 
 //フィボナッチ数列
 int ProjectEuler::p2(int maxFibonaciCount ){
-    int sumFibonaci = 2;
-    //int sumEvenFibonaci = 0;
-    for (int i = 0; i < maxFibonaciCount; i++) {
-        if(i <= 1 ){
-            sumFibonaci = 1;
-        }else{
-            sumFibonaci = (i - 1) + i;
-        }
-        
-        printf("count --> %d   %d\n", sumFibonaci, i );
+    int sumEvenFibonaci = 0;
+    /*
+    for (int i = 0; i<maxFibonaciCount; i++) {
+        sumEvenFibonaci = fibonaci(i);
+        //printf("%d \n", sumEvenFibonaci);
     }
-    return 0;
+    */
+    int hoge =fibonaci( 6 );
+    printf("ans --->%d\n",hoge );
+    return hoge;
+}
+
+int ProjectEuler::fibonaci(int targetFibonaciCount){
+    int ansFibonaci = 0;
+    switch (targetFibonaciCount) {
+        case 0:
+        case 1:
+            return 1;
+            break;
+        default:
+            ansFibonaci += fibonaci(targetFibonaciCount-1 ) + fibonaci(targetFibonaciCount-2);
+            printf("fasf %d \n", ansFibonaci);
+            break;
+    }
+    return ansFibonaci;
 }
