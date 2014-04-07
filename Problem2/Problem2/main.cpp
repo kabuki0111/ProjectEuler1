@@ -13,11 +13,20 @@
 int main(int argc, const char * argv[])
 {
     ProjectEuler euler;
-    std::vector<long> hoge = euler.p2();
+    int maxCount = 100;
+    std::vector<int> getFobonaci = euler.p2(maxCount);
     
-    for(int i = 0; i < 10; i++ ){
-        long boo= hoge[i];
-        printf("%d\n", boo);
+    bool isTestFibonaci = euler.isTestFibonaci( getFobonaci[9], 55);
+    
+    if(isTestFibonaci){
+        int sumEvent = 0;
+        for(int i = 0; i < maxCount; i++ ){
+            if(getFobonaci[i] % 2 == 0){
+                sumEvent += getFobonaci[i];
+            }
+            //printf("%d %d\n", i, boo);
+        }
+        printf("sum %d\n", sumEvent);
     }
     
     

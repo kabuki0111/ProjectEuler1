@@ -15,8 +15,11 @@
 
 class ProjectEuler{
 public:
+    bool isTestFibonaci(int, int);
+    
     int p1(int);
-    std::vector<long> p2();
+    std::vector<int> p2(int);
+    
 private:
     unsigned long long fibonaci(unsigned long long);
 };
