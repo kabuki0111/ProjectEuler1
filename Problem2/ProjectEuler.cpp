@@ -49,8 +49,8 @@ std::vector<int> ProjectEuler::p2(int maxLoop){
     return testList;
 }
 
-int ProjectEuler::p3(int maxNumber){
-    std::vector<int> testList;
+long ProjectEuler::p3(long maxNumber){
+    //std::vector<int> testList;
     //int hoge;
     /*
     for (int i = 0; i<maxNumber; i++) {
@@ -67,28 +67,24 @@ int ProjectEuler::p3(int maxNumber){
     }
     */
     
-    int primeNum =2;
-    int divisionNum = maxNumber;
-    int hoge;
-    //bool isPrimeFlag;
+    long primeNum =2;
+    long divisionNum = maxNumber;
+    long hoge;
     while (divisionNum > 1) {
-        //primeNum = 2;
         if(divisionNum % primeNum == 0){
             divisionNum = divisionNum / primeNum;
-            printf("primeNum = %d   divisionNum = %d\n", primeNum, divisionNum);
+            printf("primeNum = %ld   divisionNum = %ld\n", primeNum, divisionNum);
         }else{
-            for (int i = 0; i <= divisionNum; i++) {
+            for (long i = 0; i <= divisionNum; i++) {
                 hoge = 0;
-                //isPrimeFlag = false;
-                for (int j=2; j<i; j++) {
+                for (long j=2; j<i; j++) {
                     if(i % j == 0){
                         hoge = 1;
-                        //isPrimeFlag = true;
                     }
                 }
                 if (hoge == 0 && primeNum < i) {
+                    //printf(">>>> %ld\n", hoge);
                     primeNum = i;
-                    //isPrimeFlag = true;
                     break;
                 }
             }

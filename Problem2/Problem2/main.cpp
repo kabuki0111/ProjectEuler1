@@ -32,6 +32,7 @@ int main(int argc, const char * argv[])
     
     
     euler.p3(13195);
+    //euler.p3(600851475143);
     
     return 0;
 }
