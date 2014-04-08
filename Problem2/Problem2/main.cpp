@@ -30,8 +30,8 @@ int main(int argc, const char * argv[])
         printf("error program!!\n");
     }
     
-    //euler.p3(13195);
-    euler.p3(100);
+    
+    euler.p3(13195);
     
     return 0;
 }
