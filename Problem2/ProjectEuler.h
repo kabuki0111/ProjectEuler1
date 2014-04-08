@@ -21,7 +21,7 @@ public:
     //ProjectEular用
     int p1(int);
     std::vector<int> p2(int);
-    
+    int p3(int);
     //ProjectEularのメソッドをサポートするメソッド用
 private:
     int fibonaci(int);

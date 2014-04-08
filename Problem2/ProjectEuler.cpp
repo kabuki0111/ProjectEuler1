@@ -49,6 +49,22 @@ std::vector<int> ProjectEuler::p2(int maxLoop){
     return testList;
 }
 
+int ProjectEuler::p3(int maxNumber){
+    int hoge;
+    for (int i = 0; i<maxNumber; i++) {
+        hoge = 0;
+        for (int j=2; j<i; j++) {
+            if(i % j == 0){
+                hoge = 1;
+            }
+        }
+        if(hoge == 0){
+            printf("i = %d \n ", i);
+        }
+    }
+    return 0;
+}
+
 
 int ProjectEuler::fibonaci(int targetFibonaciCount){
     int ansFibonaci = 0;
