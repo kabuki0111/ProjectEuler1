@@ -17,6 +17,7 @@ class ProjectEuler{
 public:
     //テストコード用
     bool isTestFibonaci(std::vector<int>, int);
+    bool isTestSameNumber( long, long);
     
     //ProjectEular用
     int p1(int);

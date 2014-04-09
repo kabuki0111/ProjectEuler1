@@ -50,51 +50,33 @@ std::vector<int> ProjectEuler::p2(int maxLoop){
 }
 
 long ProjectEuler::p3(long maxNumber){
-    //std::vector<int> testList;
-    //int hoge;
-    /*
-    for (int i = 0; i<maxNumber; i++) {
-        hoge = 0;
-        for (int j=2; j<i; j++) {
-            if(i % j == 0){
-                hoge = 1;
-            }
-        }
-        if(hoge == 0){
-            printf("i = %d \n ", i);
-            testList.push_back(i);
-        }
-    }
-    */
-    
     long primeNum =2;
     long divisionNum = maxNumber;
-    long hoge;
+    bool isPrimeNum;
     while (divisionNum > 1) {
         if(divisionNum % primeNum == 0){
             divisionNum = divisionNum / primeNum;
             printf("primeNum = %ld   divisionNum = %ld\n", primeNum, divisionNum);
         }else{
             for (long i = 0; i <= divisionNum; i++) {
-                hoge = 0;
+                isPrimeNum = true;
                 for (long j=2; j<i; j++) {
                     if(i % j == 0){
-                        hoge = 1;
+                        isPrimeNum = false;
                     }
                 }
-                if (hoge == 0 && primeNum < i) {
-                    //printf(">>>> %ld\n", hoge);
+                if (isPrimeNum && primeNum < i) {
                     primeNum = i;
                     break;
                 }
             }
-            
         }
     }
-    return 0;
+    return primeNum;
 }
 
 
+//ProjectEulerの処理をサポートするメソッド
 int ProjectEuler::fibonaci(int targetFibonaciCount){
     int ansFibonaci = 0;
     switch (targetFibonaciCount) {
@@ -109,12 +91,20 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
     return ansFibonaci;
 }
 
+
 //テストコード
 bool ProjectEuler::isTestFibonaci(std::vector<int> targeteVector, int fibonaciNumber){
     for (int i= 0; i<targeteVector.size(); i++) {
         if(targeteVector[i]==fibonaciNumber){
             return true;
         }
+    }
+    return false;
+}
+
+bool ProjectEuler::isTestSameNumber(long targetNumber, long ansNumber){
+    if(targetNumber == ansNumber){
+        return true;
     }
     return false;
 }

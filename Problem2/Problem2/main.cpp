@@ -30,9 +30,8 @@ int main(int argc, const char * argv[])
         printf("error program!!\n");
     }
     
-    
-    euler.p3(13195);
-    //euler.p3(600851475143);
+    bool isAns = euler.isTestSameNumber(euler.p3(600851475143), 6857);
+    printf("ok or no? %d\n", isAns);
     
     return 0;
 }
