@@ -17,11 +17,12 @@ class ProjectEuler{
 public:
     //テストコード用
     bool isTestFibonaci(std::vector<int>, int);
+    bool isTestSameNumber( long, long);
     
     //ProjectEular用
     int p1(int);
     std::vector<int> p2(int);
-    
+    long p3(long);
     //ProjectEularのメソッドをサポートするメソッド用
 private:
     int fibonaci(int);

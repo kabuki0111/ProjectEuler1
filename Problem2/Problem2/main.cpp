@@ -15,13 +15,13 @@ int main(int argc, const char * argv[])
     int maxCount = 100;
     std::vector<int> getFobonaci = euler.p2(maxCount);
     
-    bool isTestFibonaci = euler.isTestFibonaci( getFobonaci, 55);
+    bool isTestFibonaci = euler.isTestFibonaci( getFobonaci, 3524578);
     
     if(isTestFibonaci){
         int sumEventFobonaci = 0;
         for(int i = 0; i < getFobonaci.size(); i++ ){
             if(getFobonaci[i] % 2 == 0){
-                printf("%d\n",getFobonaci[i]);
+                //printf("%d\n",getFobonaci[i]);
                 sumEventFobonaci += getFobonaci[i];
             }
         }
@@ -30,6 +30,8 @@ int main(int argc, const char * argv[])
         printf("error program!!\n");
     }
     
+    bool isAns = euler.isTestSameNumber(euler.p3(600851475143), 6857);
+    printf("ok or no? %d\n", isAns);
     
     return 0;
 }

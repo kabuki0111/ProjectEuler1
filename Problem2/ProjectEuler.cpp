@@ -49,7 +49,34 @@ std::vector<int> ProjectEuler::p2(int maxLoop){
     return testList;
 }
 
+long ProjectEuler::p3(long maxNumber){
+    long primeNum =2;
+    long divisionNum = maxNumber;
+    bool isPrimeNum;
+    while (divisionNum > 1) {
+        if(divisionNum % primeNum == 0){
+            divisionNum = divisionNum / primeNum;
+            printf("primeNum = %ld   divisionNum = %ld\n", primeNum, divisionNum);
+        }else{
+            for (long i = 0; i <= divisionNum; i++) {
+                isPrimeNum = true;
+                for (long j=2; j<i; j++) {
+                    if(i % j == 0){
+                        isPrimeNum = false;
+                    }
+                }
+                if (isPrimeNum && primeNum < i) {
+                    primeNum = i;
+                    break;
+                }
+            }
+        }
+    }
+    return primeNum;
+}
 
+
+//ProjectEulerの処理をサポートするメソッド
 int ProjectEuler::fibonaci(int targetFibonaciCount){
     int ansFibonaci = 0;
     switch (targetFibonaciCount) {
@@ -64,12 +91,20 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
     return ansFibonaci;
 }
 
+
 //テストコード
 bool ProjectEuler::isTestFibonaci(std::vector<int> targeteVector, int fibonaciNumber){
     for (int i= 0; i<targeteVector.size(); i++) {
         if(targeteVector[i]==fibonaciNumber){
             return true;
         }
+    }
+    return false;
+}
+
+bool ProjectEuler::isTestSameNumber(long targetNumber, long ansNumber){
+    if(targetNumber == ansNumber){
+        return true;
     }
     return false;
 }
