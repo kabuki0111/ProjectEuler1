@@ -75,6 +75,48 @@ long ProjectEuler::p3(long maxNumber){
     return primeNum;
 }
 
+lli ProjectEuler::p4(){
+    std::vector<lli> sumList;
+    for(lli i_right=100; i_right<1000; i_right++) {
+        for(lli j_left=999; j_left>=100; j_left--){
+            
+            lli         sum             = i_right * j_left;
+            std::string ansNumberStr    = std::to_string(sum);
+            lli         fullNumberSize  = (lli)ansNumberStr.size();
+            lli         count           = 0;
+            
+            
+            if(fullNumberSize%2 != 0){
+                count = 1;
+            }
+            
+            lli halfNumbeSize = (fullNumberSize - count) / 2;
+            bool isHoge = true;
+            
+            for(lli k_right=0; k_right<halfNumbeSize+count; k_right++){
+                lli k_left = (fullNumberSize-1) - k_right;
+                if(ansNumberStr[k_right] != ansNumberStr[k_left]){
+                    isHoge = false;
+                }
+            }
+            
+            
+            if(isHoge){
+                printf("okay!! sum = %lld i = %lld j =%lld \n", sum, i_right, j_left);
+                sumList.push_back(sum);
+            }
+        }
+    }
+    
+    lli maxNumber = 0;
+    for(lli i_list=0; i_list<(lli)sumList.size(); i_list++){
+        if(sumList[i_list] > maxNumber){
+            maxNumber = sumList[i_list];
+        }
+    }
+    printf("get!! %lld\n", maxNumber);
+    return maxNumber;
+}
 
 //ProjectEulerの処理をサポートするメソッド
 int ProjectEuler::fibonaci(int targetFibonaciCount){

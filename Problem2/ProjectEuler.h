@@ -13,6 +13,8 @@
 #include <list>
 #include <vector>
 
+typedef long long int lli;
+
 class ProjectEuler{
 public:
     //テストコード用
@@ -23,6 +25,8 @@ public:
     int p1(int);
     std::vector<int> p2(int);
     long p3(long);
+    lli p4();
+    
     //ProjectEularのメソッドをサポートするメソッド用
 private:
     int fibonaci(int);
