@@ -21,28 +21,28 @@ int ProjectEuler::p1(int maxNaturalNumber){
 
 //Problem2のフィボナッチ数列
 std::vector<int> ProjectEuler::p2(int maxLoop){
-    std::vector<int> testList;
+    std::vector<int> fibonacciNumList;
     int sumFibonaci = 1;
-    int afterOne    = 1, afterTwo = 1;
+    int prevOne     = 1, prevTwo = 1;
     int maxLimitFibonaci = 4000000;
     
     for (int i=0; i<maxLoop; i++) {
         if(i <= 1){
-            testList.push_back(1);
+            fibonacciNumList.push_back(1);
         }else{
-            sumFibonaci = afterOne + afterTwo;
-            afterTwo    = afterOne;
-            afterOne    = sumFibonaci;
+            sumFibonaci = prevOne + prevTwo;
+            prevTwo     = prevOne;
+            prevOne     = sumFibonaci;
             
             if(sumFibonaci < maxLimitFibonaci){
-                testList.push_back(sumFibonaci);
+                fibonacciNumList.push_back(sumFibonaci);
             }else{
-                return testList;
+                return fibonacciNumList;
             }
         }
     }
     
-    return testList;
+    return fibonacciNumList;
 }
 
 long ProjectEuler::p3(long maxNumber){
