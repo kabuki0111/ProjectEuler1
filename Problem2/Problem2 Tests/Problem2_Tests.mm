@@ -30,7 +30,7 @@
 - (void)testExample
 {
     ProjectEuler *euler = new ProjectEuler;
-    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertTrue(euler->p2(100) == 4613732);
 }
 
 @end

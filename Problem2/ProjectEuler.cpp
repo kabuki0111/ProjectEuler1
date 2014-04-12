@@ -20,13 +20,14 @@ int ProjectEuler::p1(int maxNaturalNumber){
 
 
 //Problem2のフィボナッチ数列
-std::vector<int> ProjectEuler::p2(int maxLoop){
-    std::vector<int> fibonacciNumList;
-    int sumFibonaci = 1;
-    int prevOne     = 1, prevTwo = 1;
-    int maxLimitFibonaci = 4000000;
+lli ProjectEuler::p2(lli maxLoop){
+    std::vector<lli> fibonacciNumList;
+    lli sumFibonaci = 1;
+    lli prevOne     = 1;
+    lli prevTwo     = 1;
+    lli maxLimitFibonaci = 4000000;
     
-    for (int i=0; i<maxLoop; i++) {
+    for (lli i=0; i<maxLoop; i++) {
         if(i <= 1){
             fibonacciNumList.push_back(1);
         }else{
@@ -37,14 +38,23 @@ std::vector<int> ProjectEuler::p2(int maxLoop){
             if(sumFibonaci < maxLimitFibonaci){
                 fibonacciNumList.push_back(sumFibonaci);
             }else{
-                return fibonacciNumList;
+                break;
             }
         }
     }
     
-    return fibonacciNumList;
+    lli sumEventFobonaci = 0;
+    for(lli i = 0; i < fibonacciNumList.size(); i++ ){
+        if(fibonacciNumList[i] % 2 == 0){
+            sumEventFobonaci += fibonacciNumList[i];
+        }
+    }
+    printf("sum even fibonaci %lld\n", sumEventFobonaci);
+    
+    return sumEventFobonaci;
 }
 
+//Problem3
 long ProjectEuler::p3(long maxNumber){
     long    primeNum    = 2;
     long    divisionNum = maxNumber;

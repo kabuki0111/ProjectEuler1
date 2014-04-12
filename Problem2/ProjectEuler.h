@@ -22,10 +22,10 @@ public:
     bool isTestSameNumber( long, long);
     
     //ProjectEular用
-    int p1(int);
-    std::vector<int> p2(int);
-    long p3(long);
-    lli p4();
+    int     p1(int);
+    lli     p2(lli);
+    long    p3(long);
+    lli     p4();
     
     //ProjectEularのメソッドをサポートするメソッド用
 private:
