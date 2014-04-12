@@ -10,8 +10,8 @@
 
 int ProjectEuler::p1(int maxNaturalNumber){
     int sumNaturalNumber = 0;
-    for (int i = 1; i < maxNaturalNumber; i++) {
-        if( i % 3 == 0 || i  % 5 == 0){
+    for (int i=1; i<maxNaturalNumber; i++) {
+        if(i%3 == 0 || i%5 == 0){
             sumNaturalNumber += i;
         }
     }
@@ -19,46 +19,42 @@ int ProjectEuler::p1(int maxNaturalNumber){
 }
 
 
-//フィボナッチ数列
+//Problem2のフィボナッチ数列
 std::vector<int> ProjectEuler::p2(int maxLoop){
     std::vector<int> testList;
-    //long sumEvenFibonaci = 1;
     int sumFibonaci = 1;
-    int afterOne = 1, afterTwo = 1;
+    int afterOne    = 1, afterTwo = 1;
     int maxLimitFibonaci = 4000000;
     
-    for (int i = 0; i < maxLoop; i++) {
+    for (int i=0; i<maxLoop; i++) {
         if(i <= 1){
             testList.push_back(1);
         }else{
             sumFibonaci = afterOne + afterTwo;
-            afterTwo = afterOne;
-            afterOne = sumFibonaci;
-            //testList.push_back(sumFibonaci);
+            afterTwo    = afterOne;
+            afterOne    = sumFibonaci;
             
             if(sumFibonaci < maxLimitFibonaci){
                 testList.push_back(sumFibonaci);
             }else{
                 return testList;
             }
-            
         }
-        
     }
     
     return testList;
 }
 
 long ProjectEuler::p3(long maxNumber){
-    long primeNum =2;
-    long divisionNum = maxNumber;
-    bool isPrimeNum;
-    while (divisionNum > 1) {
+    long    primeNum    = 2;
+    long    divisionNum = maxNumber;
+    bool    isPrimeNum;
+    while (divisionNum > 1){
         if(divisionNum % primeNum == 0){
             divisionNum = divisionNum / primeNum;
             printf("primeNum = %ld   divisionNum = %ld\n", primeNum, divisionNum);
         }else{
-            for (long i = 0; i <= divisionNum; i++) {
+            for (long i=0; i<=divisionNum; i++) {
                 isPrimeNum = true;
                 for (long j=2; j<i; j++) {
                     if(i % j == 0){
@@ -77,7 +73,7 @@ long ProjectEuler::p3(long maxNumber){
 
 lli ProjectEuler::p4(){
     std::vector<lli> sumList;
-    for(lli i_right=100; i_right<1000; i_right++) {
+    for(lli i_right=100; i_right<=999; i_right++) {
         for(lli j_left=999; j_left>=100; j_left--){
             
             lli         sum             = i_right * j_left;
@@ -127,7 +123,7 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
             return 1;
             break;
         default:
-            ansFibonaci += fibonaci(targetFibonaciCount-1 ) + fibonaci(targetFibonaciCount-2);
+            ansFibonaci += fibonaci(targetFibonaciCount - 1) + fibonaci(targetFibonaciCount - 2);
             break;
     }
     return ansFibonaci;
@@ -136,8 +132,8 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
 
 //テストコード
 bool ProjectEuler::isTestFibonaci(std::vector<int> targeteVector, int fibonaciNumber){
-    for (int i= 0; i<targeteVector.size(); i++) {
-        if(targeteVector[i]==fibonaciNumber){
+    for (int i=0; i<targeteVector.size(); i++) {
+        if(targeteVector[i] == fibonaciNumber){
             return true;
         }
     }
