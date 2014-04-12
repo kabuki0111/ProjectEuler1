@@ -27,8 +27,8 @@ lli ProjectEuler::p2(lli maxLoop){
     lli prevTwo     = 1;
     lli maxLimitFibonaci = 4000000;
     
-    for (lli i=0; i<maxLoop; i++) {
-        if(i <= 1){
+    for (lli i_naturalnum=0; i_naturalnum<maxLoop; i_naturalnum++) {
+        if(i_naturalnum <= 1){
             fibonacciNumList.push_back(1);
         }else{
             sumFibonaci = prevOne + prevTwo;
@@ -44,9 +44,9 @@ lli ProjectEuler::p2(lli maxLoop){
     }
     
     lli sumEventFobonaci = 0;
-    for(lli i = 0; i < fibonacciNumList.size(); i++ ){
-        if(fibonacciNumList[i] % 2 == 0){
-            sumEventFobonaci += fibonacciNumList[i];
+    for(lli i_fibonaci = 0; i_fibonaci < fibonacciNumList.size(); i_fibonaci++ ){
+        if(fibonacciNumList[i_fibonaci] % 2 == 0){
+            sumEventFobonaci += fibonacciNumList[i_fibonaci];
         }
     }
     printf("sum even fibonaci %lld\n", sumEventFobonaci);
@@ -81,6 +81,7 @@ long ProjectEuler::p3(long maxNumber){
     return primeNum;
 }
 
+//Problem4
 lli ProjectEuler::p4(){
     std::vector<lli> sumList;
     for(lli i_right=100; i_right<=999; i_right++) {
