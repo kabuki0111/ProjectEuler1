@@ -12,8 +12,9 @@
 int main(int argc, const char * argv[])
 {
     ProjectEuler euler;
-    int maxCount = 100;
-    euler.p2(maxCount);
+    //euler.p2(maxCount);
+    lli hoge = euler.p5(10);
+    printf("%lld\n", hoge);
     
     return 0;
 }

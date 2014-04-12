@@ -24,12 +24,14 @@ public:
     //ProjectEular用
     int     p1(int);
     lli     p2(lli);
-    long    p3(long);
+    lli     p3(lli);
     lli     p4();
+    lli     p5(lli);
     
-    //ProjectEularのメソッドをサポートするメソッド用
 private:
-    int fibonaci(int);
+    //ProjectEularのメソッドをサポートするメソッド用
+    int     fibonaci(int);
+    bool    p5MiniMultiple(lli, lli);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */

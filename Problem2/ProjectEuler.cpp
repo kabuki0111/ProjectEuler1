@@ -27,8 +27,8 @@ lli ProjectEuler::p2(lli maxLoop){
     lli prevTwo     = 1;
     lli maxLimitFibonaci = 4000000;
     
-    for (lli i_naturalnum=0; i_naturalnum<maxLoop; i_naturalnum++) {
-        if(i_naturalnum <= 1){
+    for (lli i_naturalNum=0; i_naturalNum<maxLoop; i_naturalNum++) {
+        if(i_naturalNum <= 1){
             fibonacciNumList.push_back(1);
         }else{
             sumFibonaci = prevOne + prevTwo;
@@ -55,14 +55,14 @@ lli ProjectEuler::p2(lli maxLoop){
 }
 
 //Problem3
-long ProjectEuler::p3(long maxNumber){
-    long    primeNum    = 2;
-    long    divisionNum = maxNumber;
+lli ProjectEuler::p3(lli maxNumber){
+    lli    primeNum    = 2;
+    lli    divisionNum = maxNumber;
     bool    isPrimeNum;
     while (divisionNum > 1){
         if(divisionNum % primeNum == 0){
             divisionNum = divisionNum / primeNum;
-            printf("primeNum = %ld   divisionNum = %ld\n", primeNum, divisionNum);
+            printf("primeNum = %lld   divisionNum = %lld\n", primeNum, divisionNum);
         }else{
             for (long i=0; i<=divisionNum; i++) {
                 isPrimeNum = true;
@@ -84,10 +84,10 @@ long ProjectEuler::p3(long maxNumber){
 //Problem4
 lli ProjectEuler::p4(){
     std::vector<lli> sumList;
-    for(lli i_right=100; i_right<=999; i_right++) {
-        for(lli j_left=999; j_left>=100; j_left--){
+    for(lli i_left=100; i_left<=999; i_left++) {
+        for(lli j_right=999; j_right>=100; j_right--){
             
-            lli         sum             = i_right * j_left;
+            lli         sum             = i_left * j_right;
             std::string ansNumberStr    = std::to_string(sum);
             lli         fullNumberSize  = (lli)ansNumberStr.size();
             lli         count           = 0;
@@ -98,8 +98,8 @@ lli ProjectEuler::p4(){
             }
             
             lli halfNumbeSize = (fullNumberSize - count) / 2;
-            bool isHoge = true;
             
+            bool isHoge = true;
             for(lli k_right=0; k_right<halfNumbeSize+count; k_right++){
                 lli k_left = (fullNumberSize-1) - k_right;
                 if(ansNumberStr[k_right] != ansNumberStr[k_left]){
@@ -107,9 +107,8 @@ lli ProjectEuler::p4(){
                 }
             }
             
-            
             if(isHoge){
-                printf("okay!! sum = %lld i = %lld j =%lld \n", sum, i_right, j_left);
+                printf("okay!! sum = %lld i = %lld j =%lld \n", sum, i_left, j_right);
                 sumList.push_back(sum);
             }
         }
@@ -125,7 +124,22 @@ lli ProjectEuler::p4(){
     return maxNumber;
 }
 
-//ProjectEulerの処理をサポートするメソッド
+//Problem5
+lli ProjectEuler::p5(lli maxDivideNum){
+    bool    isStopWhile         = false;
+    lli     ansNaturalNumber    = maxDivideNum;
+    
+    while(!isStopWhile){
+        printf("%lld  ", ansNaturalNumber);
+        ansNaturalNumber++;
+        isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDivideNum);
+    }
+    
+    return ansNaturalNumber;
+}
+
+
+//ProjectEulerの処理をサポートする関数
 int ProjectEuler::fibonaci(int targetFibonaciCount){
     int ansFibonaci = 0;
     switch (targetFibonaciCount) {
@@ -138,6 +152,19 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
             break;
     }
     return ansFibonaci;
+}
+
+//Problem5に関連する関数
+bool ProjectEuler::p5MiniMultiple(lli targetDivideNum, lli maxDivideNum){
+    bool isAnsFlag = true;
+    for(lli i=maxDivideNum; i>0; i--){
+        if( targetDivideNum%i != 0){
+            isAnsFlag = false;
+            break;
+        }
+    }
+    
+    return isAnsFlag;
 }
 
 
