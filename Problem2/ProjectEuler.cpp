@@ -8,6 +8,9 @@
 
 #include "ProjectEuler.h"
 
+inline lli square(lli targetNum){return targetNum * targetNum;}
+
+//Problem1の結果を算出する関数
 int ProjectEuler::p1(int maxNaturalNumber){
     int sumNaturalNumber = 0;
     for (int i=1; i<maxNaturalNumber; i++) {
@@ -15,9 +18,9 @@ int ProjectEuler::p1(int maxNaturalNumber){
             sumNaturalNumber += i;
         }
     }
+    
     return sumNaturalNumber;
 }
-
 
 //Problem2のフィボナッチ数列
 lli ProjectEuler::p2(lli maxLoop){
@@ -54,7 +57,7 @@ lli ProjectEuler::p2(lli maxLoop){
     return sumEventFobonaci;
 }
 
-//Problem3
+//Problem3の結果を算出する関数
 lli ProjectEuler::p3(lli maxNumber){
     lli    primeNum    = 2;
     lli    divisionNum = maxNumber;
@@ -78,10 +81,11 @@ lli ProjectEuler::p3(lli maxNumber){
             }
         }
     }
+    
     return primeNum;
 }
 
-//Problem4
+//Problem4の結果を算出する関数
 lli ProjectEuler::p4(){
     std::vector<lli> sumList;
     for(lli i_left=100; i_left<=999; i_left++) {
@@ -121,26 +125,37 @@ lli ProjectEuler::p4(){
         }
     }
     printf("get!! %lld\n", maxNumber);
+    
     return maxNumber;
 }
 
-//Problem5
-lli ProjectEuler::p5(lli maxDivideNum){
+//Problem5の結果を算出する関数
+lli ProjectEuler::p5(lli maxDenomNum){
     bool    isStopWhile         = false;
-    lli     ansNaturalNumber    = maxDivideNum;
+    lli     ansNaturalNumber    = maxDenomNum;
     
     while(!isStopWhile){
         printf("%lld  \n", ansNaturalNumber);
-        //ansNaturalNumber++;
-        ansNaturalNumber += maxDivideNum;
-        isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDivideNum);
+        ansNaturalNumber += maxDenomNum;
+        isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDenomNum);
     }
     
     return ansNaturalNumber;
 }
 
+//Problem6の結果を算出する関数
+lli ProjectEuler::p6(lli targetNum){
+    lli sumAllNumber     = p6SumNumberAll(targetNum);
+    lli ansProblemNumber = square(sumAllNumber) - p6SumSquare(targetNum);
+    
+    return ansProblemNumber;
+}
 
-//ProjectEulerの処理をサポートする関数
+
+
+/*ProjectEulerの処理をサポートする関数*/
+
+//Problem2の試作関数
 int ProjectEuler::fibonaci(int targetFibonaciCount){
     int ansFibonaci = 0;
     switch (targetFibonaciCount) {
@@ -152,14 +167,15 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
             ansFibonaci += fibonaci(targetFibonaciCount - 1) + fibonaci(targetFibonaciCount - 2);
             break;
     }
+    
     return ansFibonaci;
 }
 
 //Problem5に関連する関数
-bool ProjectEuler::p5MiniMultiple(lli targetDivideNum, lli maxDivideNum){
+bool ProjectEuler::p5MiniMultiple(lli targetNumerator, lli maxDenomNum){
     bool isAnsFlag = true;
-    for(lli i=maxDivideNum; i>0; i--){
-        if( targetDivideNum%i != 0){
+    for(lli i_Denominator=maxDenomNum; i_Denominator>0; i_Denominator--){
+        if( targetNumerator%i_Denominator != 0){
             isAnsFlag = false;
             break;
         }
@@ -168,20 +184,22 @@ bool ProjectEuler::p5MiniMultiple(lli targetDivideNum, lli maxDivideNum){
     return isAnsFlag;
 }
 
-
-//テストコード
-bool ProjectEuler::isTestFibonaci(std::vector<int> targeteVector, int fibonaciNumber){
-    for (int i=0; i<targeteVector.size(); i++) {
-        if(targeteVector[i] == fibonaciNumber){
-            return true;
-        }
+//Project 6 二乗の和
+lli ProjectEuler::p6SumSquare(lli targetNum){
+    if(targetNum != 0){
+        return square(targetNum) + p6SumSquare(targetNum - 1);
     }
-    return false;
+    
+    return 0;
 }
 
-bool ProjectEuler::isTestSameNumber(long targetNumber, long ansNumber){
-    if(targetNumber == ansNumber){
-        return true;
+//Project 6 指定した値の合計値
+lli ProjectEuler::p6SumNumberAll(lli targetNum){
+    if(targetNum != 0){
+        return targetNum + p6SumNumberAll(targetNum - 1);
     }
-    return false;
+    
+    return 0;
 }
+
+

@@ -2,7 +2,7 @@
 //  ProjectEuler.h
 //  Problem1
 //
-//  Created by Suzuki Takayuki on 2014/04/04.
+//  Created by T.S on 2014/04/04.
 //  Copyright (c) 2014年 T.S. All rights reserved.
 //
 
@@ -17,21 +17,20 @@ typedef long long int lli;
 
 class ProjectEuler{
 public:
-    //テストコード用
-    bool isTestFibonaci(std::vector<int>, int);
-    bool isTestSameNumber( long, long);
-    
     //ProjectEular用
     int     p1(int);
     lli     p2(lli);
     lli     p3(lli);
     lli     p4();
     lli     p5(lli);
+    lli     p6(lli);
     
 private:
     //ProjectEularのメソッドをサポートするメソッド用
     int     fibonaci(int);
     bool    p5MiniMultiple(lli, lli);
+    lli     p6SumSquare(lli);
+    lli     p6SumNumberAll(lli);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
