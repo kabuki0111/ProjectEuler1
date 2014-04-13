@@ -13,6 +13,8 @@
 #include <list>
 #include <vector>
 
+typedef long long int lli;
+
 class ProjectEuler{
 public:
     //テストコード用
@@ -20,12 +22,16 @@ public:
     bool isTestSameNumber( long, long);
     
     //ProjectEular用
-    int p1(int);
-    std::vector<int> p2(int);
-    long p3(long);
-    //ProjectEularのメソッドをサポートするメソッド用
+    int     p1(int);
+    lli     p2(lli);
+    lli     p3(lli);
+    lli     p4();
+    lli     p5(lli);
+    
 private:
-    int fibonaci(int);
+    //ProjectEularのメソッドをサポートするメソッド用
+    int     fibonaci(int);
+    bool    p5MiniMultiple(lli, lli);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
