@@ -17,16 +17,15 @@ typedef long long int lli;
 
 class ProjectEuler{
 public:
-    //テストコード用
-    bool isTestFibonaci(std::vector<int>, int);
-    bool isTestSameNumber( long, long);
-    
     //ProjectEular用
     int     p1(int);
     lli     p2(lli);
     lli     p3(lli);
     lli     p4();
     lli     p5(lli);
+    lli     p6(lli);
+    lli     p6SquareSum(lli);
+    lli     p6SumSquare(lli);
     
 private:
     //ProjectEularのメソッドをサポートするメソッド用

@@ -8,6 +8,8 @@
 
 #include "ProjectEuler.h"
 
+inline lli square(lli targetNum){return targetNum * targetNum;}
+
 int ProjectEuler::p1(int maxNaturalNumber){
     int sumNaturalNumber = 0;
     for (int i=1; i<maxNaturalNumber; i++) {
@@ -131,7 +133,6 @@ lli ProjectEuler::p5(lli maxDivideNum){
     
     while(!isStopWhile){
         printf("%lld  \n", ansNaturalNumber);
-        //ansNaturalNumber++;
         ansNaturalNumber += maxDivideNum;
         isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDivideNum);
     }
@@ -139,6 +140,33 @@ lli ProjectEuler::p5(lli maxDivideNum){
     return ansNaturalNumber;
 }
 
+//Problem6
+lli ProjectEuler::p6(lli targetNum){
+    //lli ansProblemNumber = p6SquareSum(targetNum)- square(p6SumSquare(targetNum));
+    lli ansProblemNumber = square(p6SquareSum(targetNum)) - p6SumSquare(targetNum);
+    printf("%lld %lld\n", p6SumSquare(targetNum), square(p6SquareSum(targetNum)));
+    return ansProblemNumber;
+}
+
+//Project 6 二乗の和
+lli ProjectEuler::p6SumSquare(lli targetNum){
+    if(targetNum == 0){
+        return 0;
+    }else{
+        return square(targetNum) + p6SumSquare(targetNum - 1);
+    }
+    return 0;
+}
+
+//Project 6 和の二乗
+lli ProjectEuler::p6SquareSum(lli targetNum){
+    if(targetNum == 0){
+        return 0;
+    }else{
+         return targetNum + p6SquareSum(targetNum-1);
+    }
+    return 0;
+}
 
 //ProjectEulerの処理をサポートする関数
 int ProjectEuler::fibonaci(int targetFibonaciCount){
@@ -169,19 +197,3 @@ bool ProjectEuler::p5MiniMultiple(lli targetDivideNum, lli maxDivideNum){
 }
 
 
-//テストコード
-bool ProjectEuler::isTestFibonaci(std::vector<int> targeteVector, int fibonaciNumber){
-    for (int i=0; i<targeteVector.size(); i++) {
-        if(targeteVector[i] == fibonaciNumber){
-            return true;
-        }
-    }
-    return false;
-}
-
-bool ProjectEuler::isTestSameNumber(long targetNumber, long ansNumber){
-    if(targetNumber == ansNumber){
-        return true;
-    }
-    return false;
-}
