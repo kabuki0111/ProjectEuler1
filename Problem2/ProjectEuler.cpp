@@ -10,6 +10,7 @@
 
 inline lli square(lli targetNum){return targetNum * targetNum;}
 
+//Problem1の結果を算出する関数
 int ProjectEuler::p1(int maxNaturalNumber){
     int sumNaturalNumber = 0;
     for (int i=1; i<maxNaturalNumber; i++) {
@@ -17,9 +18,9 @@ int ProjectEuler::p1(int maxNaturalNumber){
             sumNaturalNumber += i;
         }
     }
+    
     return sumNaturalNumber;
 }
-
 
 //Problem2のフィボナッチ数列
 lli ProjectEuler::p2(lli maxLoop){
@@ -56,7 +57,7 @@ lli ProjectEuler::p2(lli maxLoop){
     return sumEventFobonaci;
 }
 
-//Problem3
+//Problem3の結果を算出する関数
 lli ProjectEuler::p3(lli maxNumber){
     lli    primeNum    = 2;
     lli    divisionNum = maxNumber;
@@ -80,10 +81,11 @@ lli ProjectEuler::p3(lli maxNumber){
             }
         }
     }
+    
     return primeNum;
 }
 
-//Problem4
+//Problem4の結果を算出する関数
 lli ProjectEuler::p4(){
     std::vector<lli> sumList;
     for(lli i_left=100; i_left<=999; i_left++) {
@@ -123,10 +125,11 @@ lli ProjectEuler::p4(){
         }
     }
     printf("get!! %lld\n", maxNumber);
+    
     return maxNumber;
 }
 
-//Problem5
+//Problem5の結果を算出する関数
 lli ProjectEuler::p5(lli maxDivideNum){
     bool    isStopWhile         = false;
     lli     ansNaturalNumber    = maxDivideNum;
@@ -140,35 +143,19 @@ lli ProjectEuler::p5(lli maxDivideNum){
     return ansNaturalNumber;
 }
 
-//Problem6
+//Problem6の結果を算出する関数
 lli ProjectEuler::p6(lli targetNum){
-    //lli ansProblemNumber = p6SquareSum(targetNum)- square(p6SumSquare(targetNum));
-    lli ansProblemNumber = square(p6SquareSum(targetNum)) - p6SumSquare(targetNum);
-    printf("%lld %lld\n", p6SumSquare(targetNum), square(p6SquareSum(targetNum)));
+    lli ansSumAllNumber     = p6SumNumberAll(targetNum);
+    lli ansProblemNumber    = square(ansSumAllNumber) - p6SumSquare(targetNum);
+    
     return ansProblemNumber;
 }
 
-//Project 6 二乗の和
-lli ProjectEuler::p6SumSquare(lli targetNum){
-    if(targetNum == 0){
-        return 0;
-    }else{
-        return square(targetNum) + p6SumSquare(targetNum - 1);
-    }
-    return 0;
-}
 
-//Project 6 和の二乗
-lli ProjectEuler::p6SquareSum(lli targetNum){
-    if(targetNum == 0){
-        return 0;
-    }else{
-         return targetNum + p6SquareSum(targetNum-1);
-    }
-    return 0;
-}
 
-//ProjectEulerの処理をサポートする関数
+/*ProjectEulerの処理をサポートする関数*/
+
+//Problem2の試作関数
 int ProjectEuler::fibonaci(int targetFibonaciCount){
     int ansFibonaci = 0;
     switch (targetFibonaciCount) {
@@ -180,6 +167,7 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
             ansFibonaci += fibonaci(targetFibonaciCount - 1) + fibonaci(targetFibonaciCount - 2);
             break;
     }
+    
     return ansFibonaci;
 }
 
@@ -194,6 +182,24 @@ bool ProjectEuler::p5MiniMultiple(lli targetDivideNum, lli maxDivideNum){
     }
     
     return isAnsFlag;
+}
+
+//Project 6 二乗の和
+lli ProjectEuler::p6SumSquare(lli targetNum){
+    if(targetNum != 0){
+        return square(targetNum) + p6SumSquare(targetNum - 1);
+    }
+    
+    return 0;
+}
+
+//Project 6 指定した値の合計値
+lli ProjectEuler::p6SumNumberAll(lli targetNum){
+    if(targetNum != 0){
+        return targetNum + p6SumNumberAll(targetNum - 1);
+    }
+    
+    return 0;
 }
 
 

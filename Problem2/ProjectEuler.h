@@ -24,13 +24,13 @@ public:
     lli     p4();
     lli     p5(lli);
     lli     p6(lli);
-    lli     p6SquareSum(lli);
-    lli     p6SumSquare(lli);
     
 private:
     //ProjectEularのメソッドをサポートするメソッド用
     int     fibonaci(int);
     bool    p5MiniMultiple(lli, lli);
+    lli     p6SumSquare(lli);
+    lli     p6SumNumberAll(lli);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
