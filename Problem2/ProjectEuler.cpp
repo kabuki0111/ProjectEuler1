@@ -130,14 +130,14 @@ lli ProjectEuler::p4(){
 }
 
 //Problem5の結果を算出する関数
-lli ProjectEuler::p5(lli maxDivideNum){
+lli ProjectEuler::p5(lli maxDenomNum){
     bool    isStopWhile         = false;
-    lli     ansNaturalNumber    = maxDivideNum;
+    lli     ansNaturalNumber    = maxDenomNum;
     
     while(!isStopWhile){
         printf("%lld  \n", ansNaturalNumber);
-        ansNaturalNumber += maxDivideNum;
-        isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDivideNum);
+        ansNaturalNumber += maxDenomNum;
+        isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDenomNum);
     }
     
     return ansNaturalNumber;
@@ -145,8 +145,8 @@ lli ProjectEuler::p5(lli maxDivideNum){
 
 //Problem6の結果を算出する関数
 lli ProjectEuler::p6(lli targetNum){
-    lli ansSumAllNumber     = p6SumNumberAll(targetNum);
-    lli ansProblemNumber    = square(ansSumAllNumber) - p6SumSquare(targetNum);
+    lli sumAllNumber     = p6SumNumberAll(targetNum);
+    lli ansProblemNumber = square(sumAllNumber) - p6SumSquare(targetNum);
     
     return ansProblemNumber;
 }
@@ -172,10 +172,10 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
 }
 
 //Problem5に関連する関数
-bool ProjectEuler::p5MiniMultiple(lli targetDivideNum, lli maxDivideNum){
+bool ProjectEuler::p5MiniMultiple(lli targetNumerator, lli maxDenomNum){
     bool isAnsFlag = true;
-    for(lli i=maxDivideNum; i>0; i--){
-        if( targetDivideNum%i != 0){
+    for(lli i_Denominator=maxDenomNum; i_Denominator>0; i_Denominator--){
+        if( targetNumerator%i_Denominator != 0){
             isAnsFlag = false;
             break;
         }

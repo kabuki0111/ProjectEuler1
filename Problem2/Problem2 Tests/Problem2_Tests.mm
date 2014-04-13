@@ -2,7 +2,7 @@
 //  Problem2_Tests.m
 //  Problem2 Tests
 //
-//  Created by Suzuki Takayuki on 2014/04/12.
+//  Created by T.S on 2014/04/12.
 //  Copyright (c) 2014年 T.S. All rights reserved.
 //
 
