@@ -31,9 +31,9 @@
 {
     ProjectEuler *euler = new ProjectEuler;
     XCTAssertTrue(euler->p2(100) == 4613732);
-    XCTAssertTrue(euler->p3(600851475143) == 6857);
+    //XCTAssertTrue(euler->p3(600851475143) == 6857);
     XCTAssertTrue(euler->p4() == 906609);
-    XCTAssertTrue(euler->p5(10) == 2520);
+    XCTAssertTrue(euler->p5(20) == 232792560);
 }
 
 @end

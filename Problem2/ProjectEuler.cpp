@@ -130,8 +130,9 @@ lli ProjectEuler::p5(lli maxDivideNum){
     lli     ansNaturalNumber    = maxDivideNum;
     
     while(!isStopWhile){
-        printf("%lld  ", ansNaturalNumber);
-        ansNaturalNumber++;
+        printf("%lld  \n", ansNaturalNumber);
+        //ansNaturalNumber++;
+        ansNaturalNumber += maxDivideNum;
         isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDivideNum);
     }
     
