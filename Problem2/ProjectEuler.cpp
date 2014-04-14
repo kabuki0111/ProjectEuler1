@@ -151,6 +151,23 @@ lli ProjectEuler::p6(lli targetNum){
     return ansProblemNumber;
 }
 
+//Problem7の結果を算出する関数
+lli ProjectEuler::p7(lli targetPrimeOrdinalNum){
+    lli ansPrimeNaturalNum      = 0;
+    lli countPrimeOrdinalNum    = 1;
+    
+    for(lli i_natuNum = 1; countPrimeOrdinalNum<=targetPrimeOrdinalNum; i_natuNum++){
+        bool isPrimeFlag = false;
+        isPrimeFlag = p7PrimeCheck(i_natuNum);
+        if(isPrimeFlag){
+            printf("count = %lld, number = %lld\n", countPrimeOrdinalNum, i_natuNum);
+            ansPrimeNaturalNum = i_natuNum;
+            countPrimeOrdinalNum++;
+        }
+    }
+    return ansPrimeNaturalNum;
+}
+
 
 
 /*ProjectEulerの処理をサポートする関数*/
@@ -202,4 +219,22 @@ lli ProjectEuler::p6SumNumberAll(lli targetNum){
     return 0;
 }
 
+//指定した値が素数かどうかを判定する関数
+bool ProjectEuler::p7PrimeCheck(lli targetNaturalNum){
+    
+    if(targetNaturalNum < 2){
+        return false;
+    }else if(targetNaturalNum == 2){
+        return true;
+    }if(targetNaturalNum % 2 == 0){
+        return false;
+    }
+    
+    for(lli i_denom=3; i_denom<=targetNaturalNum/i_denom; i_denom+=2){
+        if(targetNaturalNum % i_denom == 0){
+            return false;
+        }
+    }
+    return true;
 
+}

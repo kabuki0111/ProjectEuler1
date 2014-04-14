@@ -34,7 +34,8 @@
 //    XCTAssertTrue(euler->p3(600851475143) == 6857);
 //    XCTAssertTrue(euler->p4() == 906609);
 //    XCTAssertTrue(euler->p5(20) == 232792560);
-    XCTAssertTrue(euler->p6(100) == 25164150);
+//    XCTAssertTrue(euler->p6(100) == 25164150);
+    XCTAssertTrue(euler->p7(10001) == 104743);
 }
 
 @end

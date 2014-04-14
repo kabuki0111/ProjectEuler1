@@ -24,6 +24,7 @@ public:
     lli     p4();
     lli     p5(lli);
     lli     p6(lli);
+    lli     p7(lli);
     
 private:
     //ProjectEularのメソッドをサポートするメソッド用
@@ -31,6 +32,7 @@ private:
     bool    p5MiniMultiple(lli, lli);
     lli     p6SumSquare(lli);
     lli     p6SumNumberAll(lli);
+    bool     p7PrimeCheck(lli);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
