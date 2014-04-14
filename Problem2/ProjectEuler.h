@@ -25,7 +25,7 @@ public:
     lli     p5(lli);
     lli     p6(lli);
     lli     p7(lli);
-    
+    lli     p8();
 private:
     //ProjectEularのメソッドをサポートするメソッド用
     int     fibonaci(int);

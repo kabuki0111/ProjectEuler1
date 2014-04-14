@@ -15,8 +15,9 @@ int main(int argc, const char * argv[])
     //euler.p2(maxCount);
     //lli hoge = euler.p5(20);
     //lli hoge =euler.p6(100);
-    lli hoge = euler.p7(10001);
-    printf("%lld\n", hoge);
+    //lli hoge = euler.p7(10001);
+    euler.p8();
+    //printf("%lld\n", hoge);
     
     return 0;
 }
