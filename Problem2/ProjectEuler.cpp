@@ -197,7 +197,7 @@ lli ProjectEuler::p8(){
     int     memoGetNumInt[8];
     int     maxTotalNum         =0;
     lli     castProblemSize = static_cast<lli>(problemNumberStr.size());
-    for(lli i_numStr=0; i_numStr<castProblemSize; i_numStr+=8){
+    for(lli i_numStr=0; i_numStr<castProblemSize; i_numStr+=4){
         
         for(lli j_memo=0; j_memo<8; j_memo++){
             memoGetNumChar[j_memo]  = problemNumberStr[i_numStr + j_memo];
@@ -218,7 +218,7 @@ lli ProjectEuler::p8(){
         
     }
 
-    return 0;
+    return maxTotalNum;
 }
 
 
