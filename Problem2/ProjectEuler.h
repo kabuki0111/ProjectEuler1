@@ -35,7 +35,7 @@ private:
     int_64  p6SumNumberAll(int_64);
     bool    p7PrimeCheck(int_64);
     int_64  p8IntConvFromString(const char&);
-    void    p8GetMaxNum(int_64*, int_64&);
+    int_64  p8GetMaxNum(int_64*);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */

@@ -10,9 +10,10 @@
 
 inline int_64 square(int_64 targetNum){return targetNum * targetNum;}
 
+
 //Problem1の結果を算出する関数
 int_64 ProjectEuler::p1(int_64 maxNaturalNumber){
-    int sumNaturalNumber = 0;
+    int_64 sumNaturalNumber = 0;
     for (int_64 i=1; i<maxNaturalNumber; i++) {
         if(i%3 == 0 || i%5 == 0){
             sumNaturalNumber += i;
@@ -25,9 +26,9 @@ int_64 ProjectEuler::p1(int_64 maxNaturalNumber){
 //Problem2のフィボナッチ数列
 int_64 ProjectEuler::p2(int_64 maxLoop){
     std::vector<int_64> fibonacciNumList;
-    int_64 sumFibonaci = 1;
-    int_64 prevOne     = 1;
-    int_64 prevTwo     = 1;
+    int_64 sumFibonaci      = 1;
+    int_64 prevOne          = 1;
+    int_64 prevTwo          = 1;
     int_64 maxLimitFibonaci = 4000000;
     
     for (int_64 i_naturalNum=0; i_naturalNum<maxLoop; i_naturalNum++) {
@@ -62,6 +63,7 @@ int_64 ProjectEuler::p3(int_64 maxNumber){
     int_64  primeNum    = 2;
     int_64  divisionNum = maxNumber;
     bool    isPrimeNum;
+    
     while (divisionNum > 1){
         if(divisionNum % primeNum == 0){
             divisionNum = divisionNum / primeNum;
@@ -90,10 +92,9 @@ int_64 ProjectEuler::p4(){
     std::vector<int_64> sumList;
     for(int_64 i_left=100; i_left<=999; i_left++) {
         for(int_64 j_right=999; j_right>=100; j_right--){
-            
             int_64          sum             = i_left * j_right;
             std::string     ansNumberStr    = std::to_string(sum);
-            int_64          fullNumberSize  = (int_64)ansNumberStr.size();
+            int_64          fullNumberSize  = static_cast<int_64>(ansNumberStr.size());
             int_64          count           = 0;
             
             if(fullNumberSize%2 != 0){
@@ -135,8 +136,8 @@ int_64 ProjectEuler::p5(int_64 maxDenomNum){
     
     while(!isStopWhile){
         printf("%lld  \n", ansNaturalNumber);
-        ansNaturalNumber += maxDenomNum;
-        isStopWhile = p5MiniMultiple(ansNaturalNumber, maxDenomNum);
+        ansNaturalNumber    += maxDenomNum;
+        isStopWhile         =  p5MiniMultiple(ansNaturalNumber, maxDenomNum);
     }
     
     return ansNaturalNumber;
@@ -164,6 +165,7 @@ int_64 ProjectEuler::p7(int_64 targetPrimeOrdinalNum){
             countPrimeOrdinalNum++;
         }
     }
+    
     return ansPrimeNaturalNum;
 }
 
@@ -212,7 +214,10 @@ int_64 ProjectEuler::p8(){
         ansTotalNum[3]      = ansCommonTotalNum * memoNumInt[5] * memoNumInt[6] * memoNumInt[7];
         printf("common = %lld\na = %lld\nb = %lld\nc = %lld\nd = %lld\n", ansCommonTotalNum, ansTotalNum[0], ansTotalNum[1], ansTotalNum[2], ansTotalNum[3]);
         
-        p8GetMaxNum(ansTotalNum, ansGreatestTotalNum);
+        int_64 maxTotalNum = p8GetMaxNum(ansTotalNum);
+        if(ansGreatestTotalNum < maxTotalNum){
+            ansGreatestTotalNum = maxTotalNum;
+        }
         printf("top total num = %lld\n\n", ansGreatestTotalNum);
         
     }
@@ -330,11 +335,13 @@ int_64 ProjectEuler::p8IntConvFromString(const char& numChar){
 }
 
 //配列に格納されている最大値を取得する関数
-void ProjectEuler::p8GetMaxNum(int_64* arrayInt, int_64& topTotalNum){
-    //int maxNum = 0;
-    for(int i_array = 0; i_array<4; i_array++){
-        if(topTotalNum < arrayInt[i_array]){
-            topTotalNum = arrayInt[i_array];
+int_64 ProjectEuler::p8GetMaxNum(int_64* arrayInt){
+    int_64 maxTotalNum = 0;
+    for(int_64 i_array = 0; i_array<4; i_array++){
+        if(maxTotalNum < arrayInt[i_array]){
+            maxTotalNum = arrayInt[i_array];
         }
     }
+    
+    return maxTotalNum;
 }
