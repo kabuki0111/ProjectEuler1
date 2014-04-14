@@ -12,6 +12,7 @@
 #include <iostream>
 #include <list>
 #include <vector>
+#include <stdlib.h>
 
 typedef long long int lli;
 
@@ -32,7 +33,8 @@ private:
     bool    p5MiniMultiple(lli, lli);
     lli     p6SumSquare(lli);
     lli     p6SumNumberAll(lli);
-    bool     p7PrimeCheck(lli);
+    bool    p7PrimeCheck(lli);
+    int     p8IntConvFromString(const char&);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
