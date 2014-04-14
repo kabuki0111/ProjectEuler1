@@ -153,19 +153,19 @@ lli ProjectEuler::p6(lli targetNum){
 
 //Problem7の結果を算出する関数
 lli ProjectEuler::p7(lli targetPrimeOrdinalNum){
-    lli checkNumber = 3;
-    lli countPrime  = 3;
+    lli ansPrimeNaturalNum      = 0;
+    lli countPrimeOrdinalNum    = 1;
     
-    while(countPrime <= targetPrimeOrdinalNum){
-        checkNumber++;
-        bool isPrimeFlag    = false;
-        isPrimeFlag         = p7PrimeCheck(checkNumber);
+    for(lli i_natuNum = 1; countPrimeOrdinalNum<=targetPrimeOrdinalNum; i_natuNum++){
+        bool isPrimeFlag = false;
+        isPrimeFlag = p7PrimeCheck(i_natuNum);
         if(isPrimeFlag){
-            printf("count = %lld, number = %lld\n", countPrime, checkNumber);
-            countPrime++;
+            printf("count = %lld, number = %lld\n", countPrimeOrdinalNum, i_natuNum);
+            ansPrimeNaturalNum = i_natuNum;
+            countPrimeOrdinalNum++;
         }
     }
-    return checkNumber;
+    return ansPrimeNaturalNum;
 }
 
 
@@ -229,12 +229,12 @@ bool ProjectEuler::p7PrimeCheck(lli targetNaturalNum){
     }if(targetNaturalNum % 2 == 0){
         return false;
     }
-        
-    for(lli i=3; i<=targetNaturalNum/i; i+=2){
-        if(targetNaturalNum % i == 0){
+    
+    for(lli i_denom=3; i_denom<=targetNaturalNum/i_denom; i_denom+=2){
+        if(targetNaturalNum % i_denom == 0){
             return false;
         }
     }
-    return 1;
+    return true;
 
 }
