@@ -8,12 +8,12 @@
 
 #include "ProjectEuler.h"
 
-inline lli square(lli targetNum){return targetNum * targetNum;}
+inline int_64 square(int_64 targetNum){return targetNum * targetNum;}
 
 //Problem1の結果を算出する関数
-int ProjectEuler::p1(int maxNaturalNumber){
+int_64 ProjectEuler::p1(int_64 maxNaturalNumber){
     int sumNaturalNumber = 0;
-    for (int i=1; i<maxNaturalNumber; i++) {
+    for (int_64 i=1; i<maxNaturalNumber; i++) {
         if(i%3 == 0 || i%5 == 0){
             sumNaturalNumber += i;
         }
@@ -23,14 +23,14 @@ int ProjectEuler::p1(int maxNaturalNumber){
 }
 
 //Problem2のフィボナッチ数列
-lli ProjectEuler::p2(lli maxLoop){
-    std::vector<lli> fibonacciNumList;
-    lli sumFibonaci = 1;
-    lli prevOne     = 1;
-    lli prevTwo     = 1;
-    lli maxLimitFibonaci = 4000000;
+int_64 ProjectEuler::p2(int_64 maxLoop){
+    std::vector<int_64> fibonacciNumList;
+    int_64 sumFibonaci = 1;
+    int_64 prevOne     = 1;
+    int_64 prevTwo     = 1;
+    int_64 maxLimitFibonaci = 4000000;
     
-    for (lli i_naturalNum=0; i_naturalNum<maxLoop; i_naturalNum++) {
+    for (int_64 i_naturalNum=0; i_naturalNum<maxLoop; i_naturalNum++) {
         if(i_naturalNum <= 1){
             fibonacciNumList.push_back(1);
         }else{
@@ -46,8 +46,8 @@ lli ProjectEuler::p2(lli maxLoop){
         }
     }
     
-    lli sumEventFobonaci = 0;
-    for(lli i_fibonaci = 0; i_fibonaci < fibonacciNumList.size(); i_fibonaci++ ){
+    int_64 sumEventFobonaci = 0;
+    for(int_64 i_fibonaci = 0; i_fibonaci < fibonacciNumList.size(); i_fibonaci++ ){
         if(fibonacciNumList[i_fibonaci] % 2 == 0){
             sumEventFobonaci += fibonacciNumList[i_fibonaci];
         }
@@ -58,9 +58,9 @@ lli ProjectEuler::p2(lli maxLoop){
 }
 
 //Problem3の結果を算出する関数
-lli ProjectEuler::p3(lli maxNumber){
-    lli    primeNum    = 2;
-    lli    divisionNum = maxNumber;
+int_64 ProjectEuler::p3(int_64 maxNumber){
+    int_64  primeNum    = 2;
+    int_64  divisionNum = maxNumber;
     bool    isPrimeNum;
     while (divisionNum > 1){
         if(divisionNum % primeNum == 0){
@@ -86,25 +86,25 @@ lli ProjectEuler::p3(lli maxNumber){
 }
 
 //Problem4の結果を算出する関数
-lli ProjectEuler::p4(){
-    std::vector<lli> sumList;
-    for(lli i_left=100; i_left<=999; i_left++) {
-        for(lli j_right=999; j_right>=100; j_right--){
+int_64 ProjectEuler::p4(){
+    std::vector<int_64> sumList;
+    for(int_64 i_left=100; i_left<=999; i_left++) {
+        for(int_64 j_right=999; j_right>=100; j_right--){
             
-            lli         sum             = i_left * j_right;
-            std::string ansNumberStr    = std::to_string(sum);
-            lli         fullNumberSize  = (lli)ansNumberStr.size();
-            lli         count           = 0;
+            int_64          sum             = i_left * j_right;
+            std::string     ansNumberStr    = std::to_string(sum);
+            int_64          fullNumberSize  = (int_64)ansNumberStr.size();
+            int_64          count           = 0;
             
             if(fullNumberSize%2 != 0){
                 count = 1;
             }
             
-            lli halfNumbeSize = (fullNumberSize - count) / 2;
+            int_64 halfNumbeSize = (fullNumberSize - count) / 2;
             
             bool isHoge = true;
-            for(lli k_right=0; k_right<halfNumbeSize+count; k_right++){
-                lli k_left = (fullNumberSize-1) - k_right;
+            for(int_64 k_right=0; k_right<halfNumbeSize+count; k_right++){
+                int_64 k_left = (fullNumberSize-1) - k_right;
                 if(ansNumberStr[k_right] != ansNumberStr[k_left]){
                     isHoge = false;
                 }
@@ -117,8 +117,8 @@ lli ProjectEuler::p4(){
         }
     }
     
-    lli maxNumber = 0;
-    for(lli i_list=0; i_list<(lli)sumList.size(); i_list++){
+    int_64 maxNumber = 0;
+    for(int_64 i_list=0; i_list<(int_64)sumList.size(); i_list++){
         if(sumList[i_list] > maxNumber){
             maxNumber = sumList[i_list];
         }
@@ -129,9 +129,9 @@ lli ProjectEuler::p4(){
 }
 
 //Problem5の結果を算出する関数
-lli ProjectEuler::p5(lli maxDenomNum){
+int_64 ProjectEuler::p5(int_64 maxDenomNum){
     bool    isStopWhile         = false;
-    lli     ansNaturalNumber    = maxDenomNum;
+    int_64  ansNaturalNumber    = maxDenomNum;
     
     while(!isStopWhile){
         printf("%lld  \n", ansNaturalNumber);
@@ -143,19 +143,19 @@ lli ProjectEuler::p5(lli maxDenomNum){
 }
 
 //Problem6の結果を算出する関数
-lli ProjectEuler::p6(lli targetNum){
-    lli sumAllNumber     = p6SumNumberAll(targetNum);
-    lli ansProblemNumber = square(sumAllNumber) - p6SumSquare(targetNum);
+int_64 ProjectEuler::p6(int_64 targetNum){
+    int_64 sumAllNumber     = p6SumNumberAll(targetNum);
+    int_64 ansProblemNumber = square(sumAllNumber) - p6SumSquare(targetNum);
     
     return ansProblemNumber;
 }
 
 //Problem7の結果を算出する関数
-lli ProjectEuler::p7(lli targetPrimeOrdinalNum){
-    lli ansPrimeNaturalNum      = 0;
-    lli countPrimeOrdinalNum    = 1;
+int_64 ProjectEuler::p7(int_64 targetPrimeOrdinalNum){
+    int_64 ansPrimeNaturalNum      = 0;
+    int_64 countPrimeOrdinalNum    = 1;
     
-    for(lli i_natuNum = 1; countPrimeOrdinalNum<=targetPrimeOrdinalNum; i_natuNum++){
+    for(int_64 i_natuNum = 1; countPrimeOrdinalNum<=targetPrimeOrdinalNum; i_natuNum++){
         bool isPrimeFlag = false;
         isPrimeFlag = p7PrimeCheck(i_natuNum);
         if(isPrimeFlag){
@@ -167,7 +167,8 @@ lli ProjectEuler::p7(lli targetPrimeOrdinalNum){
     return ansPrimeNaturalNum;
 }
 
-lli ProjectEuler::p8(){
+//Problem8の結果を出力する関数
+int_64 ProjectEuler::p8(){
     const std::string problemNumberStr(
         "73167176531330624919225119674426574742355349194934"
         "96983520312774506326239578318016984801869478851843"
@@ -190,42 +191,40 @@ lli ProjectEuler::p8(){
         "05886116467109405077541002256983155200055935729725"
         "71636269561882670428252483600823257530420752963450");
     
-    
-    int     ansCommonTotalNum   = 0;
-    int     ansTotalNum[4];
-    char    memoGetNumChar[8];
-    int     memoGetNumInt[8];
-    int     maxTotalNum         =0;
-    lli     castProblemSize = static_cast<lli>(problemNumberStr.size());
-    for(lli i_numStr=0; i_numStr<castProblemSize; i_numStr+=4){
-        
-        for(lli j_memo=0; j_memo<8; j_memo++){
-            memoGetNumChar[j_memo]  = problemNumberStr[i_numStr + j_memo];
-            memoGetNumInt[j_memo]   = p8IntConvFromString(memoGetNumChar[j_memo]);
-            printf("%d ", memoGetNumInt[j_memo]);
+    int_64  ansCommonTotalNum   = 0;
+    int_64  ansGreatestTotalNum = 0;
+    int_64  ansTotalNum[4];
+    char    memoNumChar[8];
+    int_64  memoNumInt[8];
+    int_64  castProblemSize = static_cast<int_64>(problemNumberStr.size());
+    for(int_64 i_numStr=0; i_numStr<castProblemSize; i_numStr+=4){
+        for(int_64 j_memo=0; j_memo<8; j_memo++){
+            memoNumChar[j_memo]  = problemNumberStr[i_numStr + j_memo];
+            memoNumInt[j_memo]   = p8IntConvFromString(memoNumChar[j_memo]);
+            printf("%lld ", memoNumInt[j_memo]);
         }
         printf("\n");
         
-        ansCommonTotalNum   = memoGetNumInt[3]  * memoGetNumInt[4];
-        ansTotalNum[0]      = ansCommonTotalNum * memoGetNumInt[0] * memoGetNumInt[1] * memoGetNumInt[2];
-        ansTotalNum[1]      = ansCommonTotalNum * memoGetNumInt[1] * memoGetNumInt[2] * memoGetNumInt[5];
-        ansTotalNum[2]      = ansCommonTotalNum * memoGetNumInt[2] * memoGetNumInt[5] * memoGetNumInt[6];
-        ansTotalNum[3]      = ansCommonTotalNum * memoGetNumInt[5] * memoGetNumInt[6] * memoGetNumInt[7];
-        printf("common = %d\na = %d\nb = %d\nc = %d\nd = %d\n", ansCommonTotalNum, ansTotalNum[0], ansTotalNum[1], ansTotalNum[2], ansTotalNum[3]);
+        ansCommonTotalNum   = memoNumInt[3]  * memoNumInt[4];
+        ansTotalNum[0]      = ansCommonTotalNum * memoNumInt[0] * memoNumInt[1] * memoNumInt[2];
+        ansTotalNum[1]      = ansCommonTotalNum * memoNumInt[1] * memoNumInt[2] * memoNumInt[5];
+        ansTotalNum[2]      = ansCommonTotalNum * memoNumInt[2] * memoNumInt[5] * memoNumInt[6];
+        ansTotalNum[3]      = ansCommonTotalNum * memoNumInt[5] * memoNumInt[6] * memoNumInt[7];
+        printf("common = %lld\na = %lld\nb = %lld\nc = %lld\nd = %lld\n", ansCommonTotalNum, ansTotalNum[0], ansTotalNum[1], ansTotalNum[2], ansTotalNum[3]);
         
-        p8GetMaxNum(ansTotalNum, maxTotalNum);
-        printf("top total num = %d\n\n", maxTotalNum);
+        p8GetMaxNum(ansTotalNum, ansGreatestTotalNum);
+        printf("top total num = %lld\n\n", ansGreatestTotalNum);
         
     }
 
-    return maxTotalNum;
+    return ansGreatestTotalNum;
 }
 
 
 /*ProjectEulerの処理をサポートする関数*/
 
 //Problem2の試作関数
-int ProjectEuler::fibonaci(int targetFibonaciCount){
+int_64 ProjectEuler::fibonaci(int_64 targetFibonaciCount){
     int ansFibonaci = 0;
     switch (targetFibonaciCount) {
         case 0:
@@ -241,9 +240,9 @@ int ProjectEuler::fibonaci(int targetFibonaciCount){
 }
 
 //Problem5に関連する関数
-bool ProjectEuler::p5MiniMultiple(lli targetNumerator, lli maxDenomNum){
+bool ProjectEuler::p5MiniMultiple(int_64 targetNumerator, int_64 maxDenomNum){
     bool isAnsFlag = true;
-    for(lli i_Denominator=maxDenomNum; i_Denominator>0; i_Denominator--){
+    for(int_64 i_Denominator=maxDenomNum; i_Denominator>0; i_Denominator--){
         if( targetNumerator%i_Denominator != 0){
             isAnsFlag = false;
             break;
@@ -254,7 +253,7 @@ bool ProjectEuler::p5MiniMultiple(lli targetNumerator, lli maxDenomNum){
 }
 
 //Project 6 二乗の和
-lli ProjectEuler::p6SumSquare(lli targetNum){
+int_64 ProjectEuler::p6SumSquare(int_64 targetNum){
     if(targetNum != 0){
         return square(targetNum) + p6SumSquare(targetNum - 1);
     }
@@ -263,7 +262,7 @@ lli ProjectEuler::p6SumSquare(lli targetNum){
 }
 
 //Project 6 指定した値の合計値
-lli ProjectEuler::p6SumNumberAll(lli targetNum){
+int_64 ProjectEuler::p6SumNumberAll(int_64 targetNum){
     if(targetNum != 0){
         return targetNum + p6SumNumberAll(targetNum - 1);
     }
@@ -272,7 +271,7 @@ lli ProjectEuler::p6SumNumberAll(lli targetNum){
 }
 
 //指定した値が素数かどうかを判定する関数
-bool ProjectEuler::p7PrimeCheck(lli targetNaturalNum){
+bool ProjectEuler::p7PrimeCheck(int_64 targetNaturalNum){
     
     if(targetNaturalNum < 2){
         return false;
@@ -282,7 +281,7 @@ bool ProjectEuler::p7PrimeCheck(lli targetNaturalNum){
         return false;
     }
     
-    for(lli i_denom=3; i_denom<=targetNaturalNum/i_denom; i_denom+=2){
+    for(int_64 i_denom=3; i_denom<=targetNaturalNum/i_denom; i_denom+=2){
         if(targetNaturalNum % i_denom == 0){
             return false;
         }
@@ -293,8 +292,8 @@ bool ProjectEuler::p7PrimeCheck(lli targetNaturalNum){
 
 
 //char型の数字からint型の数字に変換する処理
-int ProjectEuler::p8IntConvFromString(const char& numChar){
-    int ansNumInt = 0;
+int_64 ProjectEuler::p8IntConvFromString(const char& numChar){
+    int_64 ansNumInt = 0;
     switch(numChar){
         case '0':
             ansNumInt = 0;
@@ -331,7 +330,7 @@ int ProjectEuler::p8IntConvFromString(const char& numChar){
 }
 
 //配列に格納されている最大値を取得する関数
-void ProjectEuler::p8GetMaxNum(int* arrayInt, int& topTotalNum){
+void ProjectEuler::p8GetMaxNum(int_64* arrayInt, int_64& topTotalNum){
     //int maxNum = 0;
     for(int i_array = 0; i_array<4; i_array++){
         if(topTotalNum < arrayInt[i_array]){

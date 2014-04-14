@@ -14,28 +14,28 @@
 #include <vector>
 #include <stdlib.h>
 
-typedef long long int lli;
+typedef long long int int_64;
 
 class ProjectEuler{
 public:
     //ProjectEular用
-    int     p1(int);
-    lli     p2(lli);
-    lli     p3(lli);
-    lli     p4();
-    lli     p5(lli);
-    lli     p6(lli);
-    lli     p7(lli);
-    lli     p8();
+    int_64     p1(int_64);
+    int_64     p2(int_64);
+    int_64     p3(int_64);
+    int_64     p4();
+    int_64     p5(int_64);
+    int_64     p6(int_64);
+    int_64     p7(int_64);
+    int_64     p8();
 private:
     //ProjectEularのメソッドをサポートするメソッド用
-    int     fibonaci(int);
-    bool    p5MiniMultiple(lli, lli);
-    lli     p6SumSquare(lli);
-    lli     p6SumNumberAll(lli);
-    bool    p7PrimeCheck(lli);
-    int     p8IntConvFromString(const char&);
-    void    p8GetMaxNum(int*, int&);
+    int_64  fibonaci(int_64);
+    bool    p5MiniMultiple(int_64, int_64);
+    int_64  p6SumSquare(int_64);
+    int_64  p6SumNumberAll(int_64);
+    bool    p7PrimeCheck(int_64);
+    int_64  p8IntConvFromString(const char&);
+    void    p8GetMaxNum(int_64*, int_64&);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */

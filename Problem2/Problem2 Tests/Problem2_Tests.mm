@@ -30,13 +30,13 @@
 - (void)testExample
 {
     ProjectEuler *euler = new ProjectEuler;
-//    XCTAssertTrue(euler->p2(100) == 4613732);
-//    XCTAssertTrue(euler->p3(600851475143) == 6857);
-//    XCTAssertTrue(euler->p4() == 906609);
-//    XCTAssertTrue(euler->p5(20) == 232792560);
-//    XCTAssertTrue(euler->p6(100) == 25164150);
-//    XCTAssertTrue(euler->p7(10001) == 104743);
-    XCTAssert(euler->p8() == 40824);
+    XCTAssertTrue(euler->p2(100) == 4613732);
+    XCTAssertTrue(euler->p3(600851475143) == 6857);
+    XCTAssertTrue(euler->p4() == 906609);
+    XCTAssertTrue(euler->p5(20) == 232792560);
+    XCTAssertTrue(euler->p6(100) == 25164150);
+    XCTAssertTrue(euler->p7(10001) == 104743);
+    XCTAssertTrue(euler->p8() == 40824);
 }
 
 @end
