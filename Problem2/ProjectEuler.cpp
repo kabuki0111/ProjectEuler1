@@ -191,11 +191,11 @@ lli ProjectEuler::p8(){
         "71636269561882670428252483600823257530420752963450");
     
     
+    int     ansCommonTotalNum   = 0;
+    int     ansTotalNum[4];
     char    memoGetNumChar[8];
     int     memoGetNumInt[8];
-    int     ansCommonTotalNum = 0;
-    int     ansTypeA, ansTypeB, ansTypeC, ansTypeD;
-    
+    int     maxTotalNum         =0;
     lli     castProblemSize = static_cast<lli>(problemNumberStr.size());
     for(lli i_numStr=0; i_numStr<castProblemSize; i_numStr+=8){
         
@@ -207,11 +207,15 @@ lli ProjectEuler::p8(){
         printf("\n");
         
         ansCommonTotalNum   = memoGetNumInt[3]  * memoGetNumInt[4];
-        ansTypeA            = ansCommonTotalNum * memoGetNumInt[0] * memoGetNumInt[1] * memoGetNumInt[2];
-        ansTypeB            = ansCommonTotalNum * memoGetNumInt[1] * memoGetNumInt[2] * memoGetNumInt[5];
-        ansTypeC            = ansCommonTotalNum * memoGetNumInt[2] * memoGetNumInt[5] * memoGetNumInt[6];
-        ansTypeD            = ansCommonTotalNum * memoGetNumInt[5] * memoGetNumInt[6] * memoGetNumInt[7];
-        printf("%d, %d, %d, %d\n\n", ansTypeA, ansTypeB, ansTypeC, ansTypeD);
+        ansTotalNum[0]      = ansCommonTotalNum * memoGetNumInt[0] * memoGetNumInt[1] * memoGetNumInt[2];
+        ansTotalNum[1]      = ansCommonTotalNum * memoGetNumInt[1] * memoGetNumInt[2] * memoGetNumInt[5];
+        ansTotalNum[2]      = ansCommonTotalNum * memoGetNumInt[2] * memoGetNumInt[5] * memoGetNumInt[6];
+        ansTotalNum[3]      = ansCommonTotalNum * memoGetNumInt[5] * memoGetNumInt[6] * memoGetNumInt[7];
+        printf("common = %d\na = %d\nb = %d\nc = %d\nd = %d\n", ansCommonTotalNum, ansTotalNum[0], ansTotalNum[1], ansTotalNum[2], ansTotalNum[3]);
+        
+        p8GetMaxNum(ansTotalNum, maxTotalNum);
+        printf("top total num = %d\n\n", maxTotalNum);
+        
     }
 
     return 0;
@@ -324,4 +328,14 @@ int ProjectEuler::p8IntConvFromString(const char& numChar){
             break;
     }
     return ansNumInt;
+}
+
+//配列に格納されている最大値を取得する関数
+void ProjectEuler::p8GetMaxNum(int* arrayInt, int& topTotalNum){
+    //int maxNum = 0;
+    for(int i_array = 0; i_array<4; i_array++){
+        if(topTotalNum < arrayInt[i_array]){
+            topTotalNum = arrayInt[i_array];
+        }
+    }
 }
