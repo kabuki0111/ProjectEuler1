@@ -96,7 +96,6 @@ lli ProjectEuler::p4(){
             lli         fullNumberSize  = (lli)ansNumberStr.size();
             lli         count           = 0;
             
-            
             if(fullNumberSize%2 != 0){
                 count = 1;
             }
@@ -168,6 +167,59 @@ lli ProjectEuler::p7(lli targetPrimeOrdinalNum){
     return ansPrimeNaturalNum;
 }
 
+lli ProjectEuler::p8(){
+    const std::string problemNumberStr(
+        "73167176531330624919225119674426574742355349194934"
+        "96983520312774506326239578318016984801869478851843"
+        "85861560789112949495459501737958331952853208805511"
+        "12540698747158523863050715693290963295227443043557"
+        "66896648950445244523161731856403098711121722383113"
+        "62229893423380308135336276614282806444486645238749"
+        "30358907296290491560440772390713810515859307960866"
+        "70172427121883998797908792274921901699720888093776"
+        "65727333001053367881220235421809751254540594752243"
+        "52584907711670556013604839586446706324415722155397"
+        "53697817977846174064955149290862569321978468622482"
+        "83972241375657056057490261407972968652414535100474"
+        "82166370484403199890008895243450658541227588666881"
+        "16427171479924442928230863465674813919123162824586"
+        "17866458359124566529476545682848912883142607690042"
+        "24219022671055626321111109370544217506941658960408"
+        "07198403850962455444362981230987879927244284909188"
+        "84580156166097919133875499200524063689912560717606"
+        "05886116467109405077541002256983155200055935729725"
+        "71636269561882670428252483600823257530420752963450");
+    
+    
+    int     ansCommonTotalNum   = 0;
+    int     ansTotalNum[4];
+    char    memoGetNumChar[8];
+    int     memoGetNumInt[8];
+    int     maxTotalNum         =0;
+    lli     castProblemSize = static_cast<lli>(problemNumberStr.size());
+    for(lli i_numStr=0; i_numStr<castProblemSize; i_numStr+=4){
+        
+        for(lli j_memo=0; j_memo<8; j_memo++){
+            memoGetNumChar[j_memo]  = problemNumberStr[i_numStr + j_memo];
+            memoGetNumInt[j_memo]   = p8IntConvFromString(memoGetNumChar[j_memo]);
+            printf("%d ", memoGetNumInt[j_memo]);
+        }
+        printf("\n");
+        
+        ansCommonTotalNum   = memoGetNumInt[3]  * memoGetNumInt[4];
+        ansTotalNum[0]      = ansCommonTotalNum * memoGetNumInt[0] * memoGetNumInt[1] * memoGetNumInt[2];
+        ansTotalNum[1]      = ansCommonTotalNum * memoGetNumInt[1] * memoGetNumInt[2] * memoGetNumInt[5];
+        ansTotalNum[2]      = ansCommonTotalNum * memoGetNumInt[2] * memoGetNumInt[5] * memoGetNumInt[6];
+        ansTotalNum[3]      = ansCommonTotalNum * memoGetNumInt[5] * memoGetNumInt[6] * memoGetNumInt[7];
+        printf("common = %d\na = %d\nb = %d\nc = %d\nd = %d\n", ansCommonTotalNum, ansTotalNum[0], ansTotalNum[1], ansTotalNum[2], ansTotalNum[3]);
+        
+        p8GetMaxNum(ansTotalNum, maxTotalNum);
+        printf("top total num = %d\n\n", maxTotalNum);
+        
+    }
+
+    return maxTotalNum;
+}
 
 
 /*ProjectEulerの処理をサポートする関数*/
@@ -235,6 +287,55 @@ bool ProjectEuler::p7PrimeCheck(lli targetNaturalNum){
             return false;
         }
     }
+    
     return true;
+}
 
+
+//char型の数字からint型の数字に変換する処理
+int ProjectEuler::p8IntConvFromString(const char& numChar){
+    int ansNumInt = 0;
+    switch(numChar){
+        case '0':
+            ansNumInt = 0;
+            break;
+        case '1':
+            ansNumInt = 1;
+            break;
+        case '2':
+            ansNumInt = 2;
+            break;
+        case '3':
+            ansNumInt = 3;
+            break;
+        case '4':
+            ansNumInt = 4;
+            break;
+        case '5':
+            ansNumInt = 5;
+            break;
+        case '6':
+            ansNumInt = 6;
+            break;
+        case '7':
+            ansNumInt = 7;
+            break;
+        case '8':
+            ansNumInt = 8;
+            break;
+        case '9':
+            ansNumInt = 9;
+            break;
+    }
+    return ansNumInt;
+}
+
+//配列に格納されている最大値を取得する関数
+void ProjectEuler::p8GetMaxNum(int* arrayInt, int& topTotalNum){
+    //int maxNum = 0;
+    for(int i_array = 0; i_array<4; i_array++){
+        if(topTotalNum < arrayInt[i_array]){
+            topTotalNum = arrayInt[i_array];
+        }
+    }
 }

@@ -12,6 +12,7 @@
 #include <iostream>
 #include <list>
 #include <vector>
+#include <stdlib.h>
 
 typedef long long int lli;
 
@@ -25,14 +26,16 @@ public:
     lli     p5(lli);
     lli     p6(lli);
     lli     p7(lli);
-    
+    lli     p8();
 private:
     //ProjectEularのメソッドをサポートするメソッド用
     int     fibonaci(int);
     bool    p5MiniMultiple(lli, lli);
     lli     p6SumSquare(lli);
     lli     p6SumNumberAll(lli);
-    bool     p7PrimeCheck(lli);
+    bool    p7PrimeCheck(lli);
+    int     p8IntConvFromString(const char&);
+    void    p8GetMaxNum(int*, int&);
 };
 
 #endif /* defined(__Problem1__ProjectEuler__) */
