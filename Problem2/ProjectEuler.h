@@ -19,22 +19,34 @@ typedef long long int int_64;
 class ProjectEuler{
 public:
     //ProjectEular用
-    int_64     p1(int_64);
-    int_64     p2(int_64);
-    int_64     p3(int_64);
-    int_64     p4();
-    int_64     p5(int_64);
-    int_64     p6(int_64);
-    int_64     p7(int_64);
-    int_64     p8();
+    int_64  p1(int_64);
+    int_64  p2(int_64);
+    int_64  p3(int_64);
+    int_64  p4();
+    int_64  p5(int_64);
+    int_64  p6(int_64);
+    int_64  p7(int_64);
+    int_64  p8();
+    int_64  p9();
+    
 private:
     //ProjectEularのメソッドをサポートするメソッド用
+    
+    //Problem2に関連する関数
     int_64  fibonaci(int_64);
+    
+    //Problem5に関連する関数
     bool    p5MiniMultiple(int_64, int_64);
+    
+    //Problem6に関連する関数
     int_64  p6SumSquare(int_64);
     int_64  p6SumNumberAll(int_64);
+    
+    //Problem7に関連する関数
     bool    p7PrimeCheck(int_64);
-    int_64  p8IntConvFromString(const char&);
+    
+    //Problem8に関連する関数
+    int_64  p8IntConvFromChar(const char&);
     int_64  p8GetMaxNum(int_64*);
 };
 
