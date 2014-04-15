@@ -30,13 +30,15 @@
 - (void)testExample
 {
     ProjectEuler *euler = new ProjectEuler;
-//    XCTAssertTrue(euler->p2(100)            == 4613732  );
-//    XCTAssertTrue(euler->p3(600851475143)   == 6857     );
-//    XCTAssertTrue(euler->p4()               == 906609   );
-//    XCTAssertTrue(euler->p5(20)             == 232792560);
-//    XCTAssertTrue(euler->p6(100)            == 25164150 );
-//    XCTAssertTrue(euler->p7(10001)          == 104743   );
-    XCTAssertTrue(euler->p8()               == 40824    );
+    XCTAssertTrue(euler->p8() == 40824);
+}
+
+- (void)testProblem9
+{
+    //算出した値が正しく表示されているかを確認
+    ProjectEuler *euler = new ProjectEuler;
+    XCTAssertTrue(euler->p9(1000) == 31875000);
+    NSLog(@"problem9 answer : %lld", euler->p9(1000));
 }
 
 @end

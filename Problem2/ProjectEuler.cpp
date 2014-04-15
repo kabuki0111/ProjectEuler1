@@ -48,9 +48,9 @@ int_64 ProjectEuler::p2(int_64 maxLoop){
     }
     
     int_64 sumEventFobonaci = 0;
-    for(int_64 i_fibonaci = 0; i_fibonaci < fibonacciNumList.size(); i_fibonaci++ ){
-        if(fibonacciNumList[i_fibonaci] % 2 == 0){
-            sumEventFobonaci += fibonacciNumList[i_fibonaci];
+    for(int_64 j_fibonaci = 0; j_fibonaci < fibonacciNumList.size(); j_fibonaci++ ){
+        if(fibonacciNumList[j_fibonaci] % 2 == 0){
+            sumEventFobonaci += fibonacciNumList[j_fibonaci];
         }
     }
     printf("sum even fibonaci %lld\n", sumEventFobonaci);
@@ -193,36 +193,62 @@ int_64 ProjectEuler::p8(){
         "05886116467109405077541002256983155200055935729725"
         "71636269561882670428252483600823257530420752963450");
     
-    int_64  ansCommonTotalNum   = 0;
     int_64  ansGreatestTotalNum = 0;
-    int_64  ansTotalNum[4];
-    char    memoNumChar[8];
-    int_64  memoNumInt[8];
     int_64  castProblemSize = static_cast<int_64>(problemNumberStr.size());
     for(int_64 i_numStr=0; i_numStr<castProblemSize; i_numStr+=4){
+        char    memoNumChar[8];
+        int_64  memoNumInt[8];
+        
         for(int_64 j_memo=0; j_memo<8; j_memo++){
             memoNumChar[j_memo]  = problemNumberStr[i_numStr + j_memo];
-            memoNumInt[j_memo]   = p8IntConvFromString(memoNumChar[j_memo]);
+            memoNumInt[j_memo]   = p8IntConvFromChar(memoNumChar[j_memo]);
             printf("%lld ", memoNumInt[j_memo]);
         }
         printf("\n");
         
-        ansCommonTotalNum   = memoNumInt[3]  * memoNumInt[4];
-        ansTotalNum[0]      = ansCommonTotalNum * memoNumInt[0] * memoNumInt[1] * memoNumInt[2];
-        ansTotalNum[1]      = ansCommonTotalNum * memoNumInt[1] * memoNumInt[2] * memoNumInt[5];
-        ansTotalNum[2]      = ansCommonTotalNum * memoNumInt[2] * memoNumInt[5] * memoNumInt[6];
-        ansTotalNum[3]      = ansCommonTotalNum * memoNumInt[5] * memoNumInt[6] * memoNumInt[7];
-        printf("common = %lld\na = %lld\nb = %lld\nc = %lld\nd = %lld\n", ansCommonTotalNum, ansTotalNum[0], ansTotalNum[1], ansTotalNum[2], ansTotalNum[3]);
+        int_64  commonTotalNum   = 0;
+        int_64  totalNum[4];
+        commonTotalNum   = memoNumInt[3]  * memoNumInt[4];
+        totalNum[0]      = commonTotalNum * memoNumInt[0] * memoNumInt[1] * memoNumInt[2];
+        totalNum[1]      = commonTotalNum * memoNumInt[1] * memoNumInt[2] * memoNumInt[5];
+        totalNum[2]      = commonTotalNum * memoNumInt[2] * memoNumInt[5] * memoNumInt[6];
+        totalNum[3]      = commonTotalNum * memoNumInt[5] * memoNumInt[6] * memoNumInt[7];
+        printf("common = %lld\na = %lld\nb = %lld\nc = %lld\nd = %lld\n", commonTotalNum, totalNum[0], totalNum[1], totalNum[2], totalNum[3]);
         
-        int_64 maxTotalNum = p8GetMaxNum(ansTotalNum);
+        int_64 maxTotalNum = p8GetMaxNum(totalNum);
         if(ansGreatestTotalNum < maxTotalNum){
             ansGreatestTotalNum = maxTotalNum;
         }
         printf("top total num = %lld\n\n", ansGreatestTotalNum);
-        
     }
 
     return ansGreatestTotalNum;
+}
+
+//Problem9を回答する関数
+int_64 ProjectEuler::p9(int_64 findSumPythagoNum){
+    int_64 vertexA  = 0;
+    int_64 vertexB  = 0;
+    int_64 vertexC  = 0;
+    for(int_64 i_naturalNum=1; i_naturalNum<findSumPythagoNum; i_naturalNum++){
+        for(int_64 j_naturalNum=1; j_naturalNum<i_naturalNum; j_naturalNum++){
+            
+            int_64 oddNaturalNum = i_naturalNum - j_naturalNum;
+            if(oddNaturalNum%2 != 0){
+                vertexA    = square(i_naturalNum) - square(j_naturalNum);
+                vertexB    = 2 * i_naturalNum * j_naturalNum;
+                vertexC    = square(i_naturalNum) + square(j_naturalNum);
+                
+                int_64 sumPythagoreanAll = vertexA + vertexB + vertexC;
+                if(sumPythagoreanAll == findSumPythagoNum){
+                    
+                    return vertexA * vertexB * vertexC;
+                }
+            }
+        }
+    }
+    
+    return 0;
 }
 
 
@@ -231,7 +257,7 @@ int_64 ProjectEuler::p8(){
 //Problem2の試作関数
 int_64 ProjectEuler::fibonaci(int_64 targetFibonaciCount){
     int ansFibonaci = 0;
-    switch (targetFibonaciCount) {
+    switch (targetFibonaciCount){
         case 0:
         case 1:
             return 1;
@@ -297,7 +323,7 @@ bool ProjectEuler::p7PrimeCheck(int_64 targetNaturalNum){
 
 
 //char型の数字からint型の数字に変換する処理
-int_64 ProjectEuler::p8IntConvFromString(const char& numChar){
+int_64 ProjectEuler::p8IntConvFromChar(const char& numChar){
     int_64 ansNumInt = 0;
     switch(numChar){
         case '0':
