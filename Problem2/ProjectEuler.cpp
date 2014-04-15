@@ -225,42 +225,30 @@ int_64 ProjectEuler::p8(){
     return ansGreatestTotalNum;
 }
 
-
+//Problem9を回答する関数
 int_64 ProjectEuler::p9(int_64 findSumPythagoNum){
-    //int_64 checkSumPythagoreanTotal = 1000;
-    int_64 ansPythagoreanProduct    = 0;
-    int_64 pythagoreanA             = 0;
-    int_64 pythagoreanB             = 0;
-    int_64 pythagoreanC             = 0;
+    int_64 vertexA  = 0;
+    int_64 vertexB  = 0;
+    int_64 vertexC  = 0;
     for(int_64 i_naturalNum=1; i_naturalNum<findSumPythagoNum; i_naturalNum++){
         for(int_64 j_naturalNum=1; j_naturalNum<i_naturalNum; j_naturalNum++){
             
-            int_64 oddNaturalNum    = i_naturalNum - j_naturalNum;
+            int_64 oddNaturalNum = i_naturalNum - j_naturalNum;
             if(oddNaturalNum%2 != 0){
-                pythagoreanA    = square(i_naturalNum) - square(j_naturalNum);
-                pythagoreanB    = 2 * i_naturalNum * j_naturalNum;
-                pythagoreanC    = square(i_naturalNum) + square(j_naturalNum);
+                vertexA    = square(i_naturalNum) - square(j_naturalNum);
+                vertexB    = 2 * i_naturalNum * j_naturalNum;
+                vertexC    = square(i_naturalNum) + square(j_naturalNum);
                 
-                int_64 sumPythagoreanAll = pythagoreanA + pythagoreanB + pythagoreanC;
+                int_64 sumPythagoreanAll = vertexA + vertexB + vertexC;
                 if(sumPythagoreanAll == findSumPythagoNum){
-                    printf("a = %lld, b = %lld, c = %lld\n", pythagoreanA, pythagoreanB, pythagoreanC);
-                    ansPythagoreanProduct = pythagoreanA * pythagoreanB * pythagoreanC;
-                    break;
+                    
+                    return vertexA * vertexB * vertexC;
                 }
-                
             }
-        }
-        
-        if(pythagoreanA > findSumPythagoNum){
-            break;
-        }else if(pythagoreanB > findSumPythagoNum){
-            break;
-        }if(pythagoreanC > findSumPythagoNum){
-            break;
         }
     }
     
-    return ansPythagoreanProduct;
+    return 0;
 }
 
 

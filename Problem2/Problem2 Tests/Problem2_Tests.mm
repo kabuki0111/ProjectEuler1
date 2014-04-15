@@ -35,8 +35,10 @@
 
 - (void)testProblem9
 {
+    //算出した値が正しく表示されているかを確認
     ProjectEuler *euler = new ProjectEuler;
     XCTAssertTrue(euler->p9(1000) == 31875000);
+    NSLog(@"problem9 answer : %lld", euler->p9(1000));
 }
 
 @end
