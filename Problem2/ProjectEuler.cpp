@@ -254,36 +254,21 @@ int_64 ProjectEuler::p9(int_64 findSumPythagoNum){
 //Problem10を回答する関数
 int_64 ProjectEuler::p10(int_64 maxNaturalNum){
     std::vector<int_64> primeVector;
-    
     for(int_64 i_naturalNum=2; i_naturalNum<=maxNaturalNum; i_naturalNum++){
-        bool isPrime = true;
-        if(i_naturalNum%2 != 0 || i_naturalNum==2){
-            for(int_64 j_prime=2; j_prime<=6; j_prime++){
-                if(i_naturalNum%j_prime == 0){
-                    isPrime = false;
-                    break;
-                }
-            }
-            
-            if(i_naturalNum<=6){
-                printf("1... %lld\n", i_naturalNum);
-                primeVector.push_back(i_naturalNum);
-            }
-            
-            if(isPrime){
-                printf("2... %lld\n", i_naturalNum);
-                primeVector.push_back(i_naturalNum);
-            }
+        bool isPrime = p7PrimeCheck(i_naturalNum);
+        if(isPrime){
+            printf("%lld\n", i_naturalNum);
+            primeVector.push_back(i_naturalNum);
         }
     }
     
-    int_64 hoge = 0;
+    int_64 ansSumPrimeNumber = 0;
     for(int_64 k_primeVector=0; k_primeVector<primeVector.size(); k_primeVector++){
-        hoge += primeVector[k_primeVector];
+        ansSumPrimeNumber += primeVector[k_primeVector];
     }
-    printf("%lld\n", hoge);
+    printf("%lld\n", ansSumPrimeNumber);
     
-    return hoge;
+    return ansSumPrimeNumber;
 }
 
 

@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[])
 {
     ProjectEuler euler;
-    euler.p10(10);
+    euler.p10(2000000);
     
     return 0;
 }
