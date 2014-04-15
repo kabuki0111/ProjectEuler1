@@ -8,7 +8,6 @@
 
 #ifndef __Problem1__ProjectEuler__
 #define __Problem1__ProjectEuler__
-//#ifdef __cplus
 #include <iostream>
 #include <list>
 #include <vector>
@@ -28,6 +27,7 @@ public:
     int_64  p7(int_64);
     int_64  p8();
     int_64  p9(int_64);
+    int_64  p10(int_64);
     
 private:
     //ProjectEularのメソッドをサポートするメソッド用
