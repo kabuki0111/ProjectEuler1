@@ -41,4 +41,12 @@
     NSLog(@"problem9 answer : %lld", euler->p9(1000));
 }
 
+- (void)testProblem10
+{
+    //算出した値が正しく表示されているかを確認
+    ProjectEuler *euler = new ProjectEuler;
+    XCTAssertTrue(euler->p10(10) == 17);
+    NSLog(@"problem9 answer : %lld", euler->p10(10));
+}
+
 @end

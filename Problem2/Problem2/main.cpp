@@ -12,8 +12,7 @@
 int main(int argc, const char * argv[])
 {
     ProjectEuler euler;
-    int_64 ansNum = euler.p9(1000);
-    printf("---->%lld\n", ansNum);
+    euler.p10(10);
     
     return 0;
 }
