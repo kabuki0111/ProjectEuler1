@@ -226,13 +226,13 @@ int_64 ProjectEuler::p8(){
 }
 
 
-int_64 ProjectEuler::p9(){
-    int_64 checkSumPythagoreanTotal = 1000;
-    int_64 ansPythagoreanProduct = 0;
-    int_64 pythagoreanA     = 0;
-    int_64 pythagoreanB     = 0;
-    int_64 pythagoreanC     = 0;
-    for(int_64 i_naturalNum=1; i_naturalNum<checkSumPythagoreanTotal; i_naturalNum++){
+int_64 ProjectEuler::p9(int_64 findSumPythagoNum){
+    //int_64 checkSumPythagoreanTotal = 1000;
+    int_64 ansPythagoreanProduct    = 0;
+    int_64 pythagoreanA             = 0;
+    int_64 pythagoreanB             = 0;
+    int_64 pythagoreanC             = 0;
+    for(int_64 i_naturalNum=1; i_naturalNum<findSumPythagoNum; i_naturalNum++){
         for(int_64 j_naturalNum=1; j_naturalNum<i_naturalNum; j_naturalNum++){
             
             int_64 oddNaturalNum    = i_naturalNum - j_naturalNum;
@@ -242,7 +242,7 @@ int_64 ProjectEuler::p9(){
                 pythagoreanC    = square(i_naturalNum) + square(j_naturalNum);
                 
                 int_64 sumPythagoreanAll = pythagoreanA + pythagoreanB + pythagoreanC;
-                if(sumPythagoreanAll == checkSumPythagoreanTotal){
+                if(sumPythagoreanAll == findSumPythagoNum){
                     printf("a = %lld, b = %lld, c = %lld\n", pythagoreanA, pythagoreanB, pythagoreanC);
                     ansPythagoreanProduct = pythagoreanA * pythagoreanB * pythagoreanC;
                     break;
@@ -251,11 +251,11 @@ int_64 ProjectEuler::p9(){
             }
         }
         
-        if(pythagoreanA > checkSumPythagoreanTotal){
+        if(pythagoreanA > findSumPythagoNum){
             break;
-        }else if(pythagoreanB > checkSumPythagoreanTotal){
+        }else if(pythagoreanB > findSumPythagoNum){
             break;
-        }if(pythagoreanC > checkSumPythagoreanTotal){
+        }if(pythagoreanC > findSumPythagoNum){
             break;
         }
     }

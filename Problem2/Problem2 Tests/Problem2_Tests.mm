@@ -33,4 +33,10 @@
     XCTAssertTrue(euler->p8() == 40824);
 }
 
+- (void)testProblem9
+{
+    ProjectEuler *euler = new ProjectEuler;
+    XCTAssertTrue(euler->p9(1000) == 31875000);
+}
+
 @end
