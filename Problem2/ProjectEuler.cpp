@@ -343,7 +343,7 @@ int_64 ProjectEuler::p11(){
         printf("\n");
     }
     printf("%lld\n", maxSumDiagonalNum);
-    return 0;
+    return maxSumDiagonalNum;
 }
 
 /*ProjectEulerの処理をサポートする関数*/
