@@ -273,27 +273,77 @@ int_64 ProjectEuler::p10(int_64 maxNaturalNum){
 
 //Problem11を回答するメソッド
 int_64 ProjectEuler::p11(){
-//    std::string problemNumStr(
-//     "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08"
-//     "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00"
-//     "81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65"
-//     "52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91"
-//     "22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 13 80"
-//     "24 47 32 60 99 03 45 02 44 75 33 53 78 36 84 20 35 17 12 50"
-//     "32 98 81 28 64 23 67 10 26 38 40 67 59 54 70 66 18 38 64 70"
-//     "67 26 20 68 02 62 12 20 95 63 94 39 63 08 40 91 66 49 94 21"
-//     "24 55 58 05 66 73 99 26 97 17 78 78 96 83 14 88 34 89 63 72"
-//     "21 36 23 09 75 00 76 44 20 45 35 14 00 61 33 97 34 31 33 95"
-//     "78 17 53 28 22 75 31 67 15 94 03 80 04 62 16 14 09 53 56 92"
-//     "16 39 05 42 96 35 31 47 55 58 88 24 00 17 54 24 36 29 85 57"
-//     "86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 54 17 58"
-//     "19 80 81 68 05 94 47 69 28 73 92 13 86 52 17 77 04 89 55 40"
-//     "04 52 08 83 97 35 99 16 07 97 57 32 16 26 26 79 33 27 98 66"
-//     "88 36 68 87 57 62 20 72 03 46 33 67 46 55 12 32 63 93 53 69"
-//     "04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36"
-//     "20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16"
-//     "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54"
-//     "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48");
+    std::string problemNumStr(
+     " 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 "
+     " 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 "
+     " 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65 "
+     " 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91 "
+     " 22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 13 80 "
+     " 24 47 32 60 99 03 45 02 44 75 33 53 78 36 84 20 35 17 12 50 "
+     " 32 98 81 28 64 23 67 10 26 38 40 67 59 54 70 66 18 38 64 70 "
+     " 67 26 20 68 02 62 12 20 95 63 94 39 63 08 40 91 66 49 94 21 "
+     " 24 55 58 05 66 73 99 26 97 17 78 78 96 83 14 88 34 89 63 72 "
+     " 21 36 23 09 75 00 76 44 20 45 35 14 00 61 33 97 34 31 33 95 "
+     " 78 17 53 28 22 75 31 67 15 94 03 80 04 62 16 14 09 53 56 92 "
+     " 16 39 05 42 96 35 31 47 55 58 88 24 00 17 54 24 36 29 85 57 "
+     " 86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 54 17 58 "
+     " 19 80 81 68 05 94 47 69 28 73 92 13 86 52 17 77 04 89 55 40 "
+     " 04 52 08 83 97 35 99 16 07 97 57 32 16 26 26 79 33 27 98 66 "
+     " 88 36 68 87 57 62 20 72 03 46 33 67 46 55 12 32 63 93 53 69 "
+     " 04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36 "
+     " 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16 "
+     " 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 "
+     " 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48 ");
+    
+//    int bubu = 0;
+//    int hoge = 0;
+//    int_64 problemNumInt[0][0];
+//    for(int_64 i_index=0; i_index<static_cast<int_64>(problemNumStr.size()-1); i_index++) {
+//        
+//        if(problemNumStr[i_index]==' '){
+//            printf(">i = %lld  a = %d\n", i_index, atoi(&problemNumStr[i_index]) );
+//            problemNumInt[bubu][hoge] = atoi(&problemNumStr[i_index]);
+//            bubu++;
+//        }
+//        
+//        if(i_index==57 || i_index==118 || i_index==179 || i_index==240 || i_index==301 || i_index==362 || i_index==423 || i_index==484 || i_index==545 || i_index==606 || i_index==667 || i_index==728 || i_index==789 || i_index==850 || i_index==911 || i_index==972 || i_index==1033 || i_index==1094 || i_index==1155 || i_index==1216 ){
+//            i_index+=4;
+//            if(i_index<1220){
+//                hoge++;
+//                bubu = 0;
+//                printf("\n<i = %lld  a = %d\n", i_index, atoi(&problemNumStr[i_index]) );
+//                printf("\n<i = %lld  a = %d\n", i_index, atoi(&problemNumStr[i_index]) );
+//                problemNumInt[bubu][hoge] = atoi(&problemNumStr[i_index]);
+//                bubu++;
+//            }
+//        }
+//    }
+//    
+//    for(int_64 j_hoge=0; j_hoge<20; j_hoge++){
+//        for(int_64 k_hoge=0; k_hoge<20; k_hoge++){
+//            printf("%d ", (int)problemNumInt[j_hoge][k_hoge]);
+//        }
+//        printf("\n");
+//    }
+    
+    
+//    int_64 stringIndex = 0;
+//    int_64 problemNumInt[0][0]
+//    while(){
+//        <#statements#>
+//    }
+    
+//    int_64 hoge[0][0];
+//    hoge[0][0] = atoi(&problemNumStr[0]);
+//    hoge[1][0] = atoi(&problemNumStr[1]);
+//    hoge[2][0] = atoi(&problemNumStr[2]);
+//    hoge[3][0] = atoi(&problemNumStr[3]);
+//    hoge[4][0] = atoi(&problemNumStr[4]);
+//    hoge[5][0] = atoi(&problemNumStr[5]);
+//    hoge[6][0] = atoi(&problemNumStr[6]);
+//    hoge[7][0] = atoi(&problemNumStr[7]);
+//    hoge[8][0] = atoi(&problemNumStr[8]);
+//    printf("0 = %lld / 1 = %lld / 2 = %lld / 3 = %lld / 4 = %lld / 5 = %lld / 6 = %lld / 7 = %lld / 8 = %lld", hoge[0][0], hoge[1][0], hoge[2][0], hoge[3][0], hoge[4][0], hoge[5][0], hoge[6][0], hoge[7][0], hoge[8][0]);
     
     int_64 problemNumInt[20][20] ={
         {8 , 2 , 22, 97, 38, 15, 0 , 40, 0 , 75, 4 , 5 , 7,  78, 52, 12, 50, 77, 91, 8 },
@@ -328,7 +378,7 @@ int_64 ProjectEuler::p11(){
                 problemNumInt[i_width][j_height] * problemNumInt[i_width+1][j_height+1] * problemNumInt[i_width+2][j_height+2] * problemNumInt[i_width+3][j_height+3];
             left =
                 problemNumInt[i_width+3][j_height] * problemNumInt[i_width+2][j_height+1] * problemNumInt[i_width+1][j_height+2] * problemNumInt[i_width][j_height+3];
-            printf("right = %lld\nleft  = %lld\n\n", right, left);
+            //printf("right = %lld\nleft  = %lld\n\n", right, left);
             
             if(right < left){
                 if(left > maxSumDiagonalNum){
@@ -342,7 +392,7 @@ int_64 ProjectEuler::p11(){
         }
         printf("\n");
     }
-    printf("%lld\n", maxSumDiagonalNum);
+    //printf("%lld\n", maxSumDiagonalNum);
     return maxSumDiagonalNum;
 }
 
