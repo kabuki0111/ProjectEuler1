@@ -12,9 +12,10 @@
 int main(int argc, const char * argv[])
 {
     ProjectEuler euler;
-    euler.p10(2000000);
+    //euler.p10(2000000);
+    euler.p11();
     
-    return 0;
+    //return 0;
 }
 
 

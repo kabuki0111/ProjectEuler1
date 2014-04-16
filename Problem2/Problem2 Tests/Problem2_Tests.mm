@@ -48,4 +48,11 @@
     XCTAssertTrue(euler->p10(2000000) == 142913828922);
 }
 
+- (void)testProblem11
+{
+    //算出した値が正しく表示されているかを確認
+    ProjectEuler *euler = new ProjectEuler;
+    XCTAssertTrue(euler->p11() == 70600674);
+}
+
 @end
