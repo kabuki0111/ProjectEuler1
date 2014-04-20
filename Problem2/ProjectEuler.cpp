@@ -322,26 +322,30 @@ int_64 ProjectEuler::p11(){
 
 //ProjectEulerのProblem12のメソッド
 int_64 ProjectEuler::p12(){
-    int_64 countInt     = 0;
+    std::vector<int_64> ansVector;
+    //int_64 countInt     = 0;
     int_64 primeNumber  = 1;
+    int_64 test         = 500;
     
-    while(countInt<6){
+    while(static_cast<int_64>(ansVector.size())<test){
         int_64 ansPrime = p6SumNumberAll(primeNumber);
         for(int_64 i_prime=ansPrime; i_prime>0; i_prime--){
             int_64 hoge = ansPrime % i_prime;
-            if(hoge%i_prime == 0){
+            if(hoge == 0){
                 printf("%lld\n", i_prime);
-                countInt++;
+                //countInt++;
+                ansVector.push_back(i_prime);
             }
-            if(countInt == 6){
+            if(static_cast<int_64>(ansVector.size()) == test){
                 printf("ans okay!!\n");
                 break;
             }
             
         }
         
-        if(countInt != 6){
-            countInt = 0;
+        if(static_cast<int_64>(ansVector.size()) != test){
+            //countInt = 0;
+            ansVector.clear();
         }
         printf("\n");
         primeNumber++;
