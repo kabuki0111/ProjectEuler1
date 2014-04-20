@@ -58,7 +58,7 @@
 - (void)testProblem12
 {
     ProjectEuler *euler = new ProjectEuler;
-    //XCTAssertTrue(euler->p12() == );
+    XCTAssertTrue(euler->p12() == 76576500);
 }
 
 @end
