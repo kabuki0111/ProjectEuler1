@@ -320,6 +320,35 @@ int_64 ProjectEuler::p11(){
     return maxSumDiagonalNum;
 }
 
+//ProjectEulerのProblem12のメソッド
+int_64 ProjectEuler::p12(){
+    int_64 countInt     = 0;
+    int_64 primeNumber  = 1;
+    
+    while(countInt<6){
+        int_64 ansPrime = p6SumNumberAll(primeNumber);
+        for(int_64 i_prime=ansPrime; i_prime>0; i_prime--){
+            int_64 hoge = ansPrime % i_prime;
+            if(hoge%i_prime == 0){
+                printf("%lld\n", i_prime);
+                countInt++;
+            }
+            if(countInt == 6){
+                printf("ans okay!!\n");
+                break;
+            }
+            
+        }
+        
+        if(countInt != 6){
+            countInt = 0;
+        }
+        printf("\n");
+        primeNumber++;
+    }
+    return 0;
+}
+
 /*ProjectEulerの処理をサポートする関数*/
 
 //Problem2の試作関数

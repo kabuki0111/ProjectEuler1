@@ -15,6 +15,8 @@ int main(int argc, const char * argv[])
     //euler.p10(2000000);
     euler.p11();
     
+    euler.p12();
+    
     //return 0;
 }
 

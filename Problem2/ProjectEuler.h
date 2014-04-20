@@ -29,6 +29,7 @@ public:
     int_64  p9(int_64);
     int_64  p10(int_64);
     int_64  p11();
+    int_64  p12();
     
 private:
     //ProjectEularのメソッドをサポートするメソッド用
