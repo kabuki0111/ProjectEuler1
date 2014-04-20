@@ -320,6 +320,37 @@ int_64 ProjectEuler::p11(){
     return maxSumDiagonalNum;
 }
 
+//ProjectEulerのProblem12のメソッド
+int_64 ProjectEuler::p12(){
+    std::vector<int_64> ansVector;
+    int_64 primeNumber  = 1;
+    int_64 test         = 500;
+    
+    while(static_cast<int_64>(ansVector.size()) < test){
+        int_64 ansPrime = p6SumNumberAll(primeNumber);
+        for(int_64 i_prime=ansPrime; i_prime>0; i_prime--){
+            
+            int_64 ansNum = ansPrime % i_prime;
+            if(ansNum == 0){
+                printf("%lld\n", i_prime);
+                ansVector.push_back(i_prime);
+            }
+            
+            if(static_cast<int_64>(ansVector.size()) == test){
+                printf("ans okay!!\n");
+                return ansPrime;
+            }
+        }
+        
+        if(static_cast<int_64>(ansVector.size()) != test){
+            ansVector.clear();
+        }
+        printf("\n");
+        primeNumber++;
+    }
+    return 0;
+}
+
 /*ProjectEulerの処理をサポートする関数*/
 
 //Problem2の試作関数
